@@ -25,6 +25,9 @@ public class ShootController : MonoBehaviour
 		target.transform.position = transform.position + direction * targetDistance;
 
 		handleShoot ();
+
+		if (Input.GetButtonDown ("1Jump"))
+			Debug.Log ("Pressed!");
 	}
 
 	void handleShoot()

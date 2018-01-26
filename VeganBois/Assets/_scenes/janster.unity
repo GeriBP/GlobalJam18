@@ -282,7 +282,7 @@ MonoBehaviour:
   projectilePrefab: {fileID: 1931214053130332, guid: 08b928448e1e0cd4a8af79bfa704d0fb,
     type: 2}
   targetDistance: 4
-  projectileSpeed: 10
+  projectileSpeed: 15
 --- !u!1001 &1128707208
 Prefab:
   m_ObjectHideFlags: 0
