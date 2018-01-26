@@ -30,7 +30,7 @@ public class PlayerMove : MonoBehaviour {
     private bool checkGround()
     {
         RaycastHit2D hit = Physics2D.Raycast(groundP.transform.position, Vector2.down, 1f, mask);
-        Debug.DrawRay();
+        Debug.DrawRay(groundP.transform.position, Vector2.down, Color.red, 1f);
         bool hitBool = false;
         if (hit.collider != null)
         {
