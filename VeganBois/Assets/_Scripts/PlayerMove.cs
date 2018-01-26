@@ -10,6 +10,12 @@ public class PlayerMove : MonoBehaviour {
     [SerializeField]
     float jumpForce;
     [SerializeField]
+    float secondMultiplier;
+    [SerializeField]
+    float airMultiplier;
+    [SerializeField]
+    int nJumps;
+    [SerializeField]
     float jumpTime;
     [SerializeField]
     float fallMult;
@@ -22,20 +28,30 @@ public class PlayerMove : MonoBehaviour {
 
     private Rigidbody2D myRb;
     private bool canJump = true;
+    private int currJumps;
 
     private bool grounded = false;
     private Vector2 normal;
 	void Start () {
         myRb = GetComponent<Rigidbody2D>();
+        currJumps = nJumps;
     }
 	
-	void Update () {
-        grounded = checkGround();
-        if (canJump && grounded && Input.GetKeyDown(KeyCode.W))
+	void Update ()
+    {
+        GroundChecking();
+        if (canJump && currJumps > 0 && Input.GetButtonDown("Fire1"))
         {
             canJump = false;
             Invoke("EnableJump", jumpTime);
-            myRb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+            myRb.velocity = new Vector2(myRb.velocity.x, 0.0f);
+            float applyForce = jumpForce;
+            if (currJumps < nJumps)
+            {
+                applyForce *= secondMultiplier;
+            }
+            myRb.AddForce(Vector2.up * applyForce, ForceMode2D.Impulse);
+            --currJumps;
         }
 
         //Jump "Game-feel" improvement
@@ -44,11 +60,24 @@ public class PlayerMove : MonoBehaviour {
             //We apply more force downwards to fall faster
             myRb.velocity -= Vector2.down * Physics2D.gravity.y * fallMult * Time.deltaTime;
         }
-        else if (myRb.velocity.y > 0 && !Input.GetKey(KeyCode.W)) //If we are going up and not pressing the jump button
+        else if (myRb.velocity.y > 0 && !Input.GetButton("Fire1")) //If we are going up and not pressing the jump button
         {
             //We apply more force downwards to fall faster
             myRb.velocity -= Vector2.down * Physics2D.gravity.y * lowJumpMult * Time.deltaTime;
         }
+    }
+
+    private void GroundChecking()
+    {
+        if (!grounded && checkGround()) //if we land
+        {
+            currJumps = nJumps;
+        }
+        if (grounded && !checkGround() && canJump) //if we takeOff
+        {
+            currJumps--;
+        }
+        grounded = checkGround();
     }
 
     private void EnableJump()
@@ -65,6 +94,18 @@ public class PlayerMove : MonoBehaviour {
         else if (grounded && Input.GetAxis(id + "Horizontal") < 0)
         {
             myRb.velocity = new Vector2(-moveSpeed, myRb.velocity.y);
+        }
+        if (!grounded && Input.GetAxis(id + "Horizontal") > 0)
+        {
+            myRb.velocity = new Vector2(moveSpeed * airMultiplier, myRb.velocity.y);
+        }
+        else if (!grounded && Input.GetAxis(id + "Horizontal") < 0)
+        {
+            myRb.velocity = new Vector2(-moveSpeed * airMultiplier, myRb.velocity.y);
+        }
+        if (Input.GetAxis(id + "Horizontal") == 0)
+        {
+            myRb.velocity = new Vector2(0.0f, myRb.velocity.y);
         }
     }
 

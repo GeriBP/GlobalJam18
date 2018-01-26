@@ -320,6 +320,9 @@ MonoBehaviour:
   id: 1
   moveSpeed: 4
   jumpForce: 15
+  secondMultiplier: 0.5
+  airMultiplier: 0.75
+  nJumps: 2
   jumpTime: 0.2
   fallMult: 2
   lowJumpMult: 4
