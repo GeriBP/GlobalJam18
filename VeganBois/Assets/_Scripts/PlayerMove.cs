@@ -8,11 +8,20 @@ public class PlayerMove : MonoBehaviour {
     [SerializeField]
     float moveSpeed;
     [SerializeField]
+    float jumpForce;
+    [SerializeField]
+    float jumpTime;
+    [SerializeField]
+    float fallMult;
+    [SerializeField]
+    float lowJumpMult;
+    [SerializeField]
     GameObject groundP;
     [SerializeField]
     LayerMask mask;
 
     private Rigidbody2D myRb;
+    private bool canJump = true;
 
     private bool grounded = false;
     private Vector2 normal;
@@ -22,6 +31,29 @@ public class PlayerMove : MonoBehaviour {
 	
 	void Update () {
         grounded = checkGround();
+        if (canJump && grounded && Input.GetKeyDown(KeyCode.W))
+        {
+            canJump = false;
+            Invoke("EnableJump", jumpTime);
+            myRb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+        }
+
+        //Jump "Game-feel" improvement
+        if (myRb.velocity.y < 0) //If we are falling
+        {
+            //We apply more force downwards to fall faster
+            myRb.velocity -= Vector2.down * Physics2D.gravity.y * fallMult * Time.deltaTime;
+        }
+        else if (myRb.velocity.y > 0 && !Input.GetKey(KeyCode.W)) //If we are going up and not pressing the jump button
+        {
+            //We apply more force downwards to fall faster
+            myRb.velocity -= Vector2.down * Physics2D.gravity.y * lowJumpMult * Time.deltaTime;
+        }
+    }
+
+    private void EnableJump()
+    {
+        canJump = true;
     }
 
     private void FixedUpdate()
@@ -38,8 +70,8 @@ public class PlayerMove : MonoBehaviour {
 
     private bool checkGround()
     {
-        RaycastHit2D hit = Physics2D.Raycast(groundP.transform.position, Vector2.down, 1f, mask);
-        Debug.DrawRay(groundP.transform.position, Vector2.down, Color.red, 1f);
+        RaycastHit2D hit = Physics2D.Raycast(groundP.transform.position, Vector2.down, 0.1f, mask);
+        Debug.DrawRay(groundP.transform.position, Vector2.down, Color.red);
         bool hitBool = false;
         if (hit.collider != null)
         {
