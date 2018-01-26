@@ -25,16 +25,13 @@ public class ShootController : MonoBehaviour
 		target.transform.position = transform.position + direction * targetDistance;
 
 		handleShoot ();
-
-		if (Input.GetButtonDown ("1Jump"))
-			Debug.Log ("Pressed!");
 	}
 
 	void handleShoot()
 	{
-		if (Input.GetKeyDown (KeyCode.Space)) 
+		if (Input.GetButtonDown ("1X")) 
 		{
-			Debug.Log ("SHOOT!");
+			//Debug.Log ("SHOOT!");
 			GameObject g = Instantiate (projectilePrefab, transform.position, Quaternion.identity);
 			g.GetComponent<Rigidbody2D> ().velocity = direction * projectileSpeed;
 		}
