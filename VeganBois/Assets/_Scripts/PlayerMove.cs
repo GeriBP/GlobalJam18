@@ -26,6 +26,8 @@ public class PlayerMove : MonoBehaviour {
     [SerializeField]
     LayerMask mask;
 
+    public bool move = true;
+
     private Rigidbody2D myRb;
     private bool canJump = true;
     private int currJumps;
@@ -40,7 +42,7 @@ public class PlayerMove : MonoBehaviour {
 	void Update ()
     {
         GroundChecking();
-        if (canJump && currJumps > 0 && Input.GetButtonDown("Fire1"))
+        if (canJump && currJumps > 0 && Input.GetButtonDown("Fire1") && move)
         {
             canJump = false;
             Invoke("EnableJump", jumpTime);
@@ -87,19 +89,19 @@ public class PlayerMove : MonoBehaviour {
 
     private void FixedUpdate()
     {
-        if (grounded && Input.GetAxis(id + "Horizontal") > 0)
+        if (grounded && Input.GetAxis(id + "Horizontal") > 0 && move)
         {
             myRb.velocity = new Vector2(moveSpeed, myRb.velocity.y);
         }
-        else if (grounded && Input.GetAxis(id + "Horizontal") < 0)
+        else if (grounded && Input.GetAxis(id + "Horizontal") < 0 && move)
         {
             myRb.velocity = new Vector2(-moveSpeed, myRb.velocity.y);
         }
-        if (!grounded && Input.GetAxis(id + "Horizontal") > 0)
+        if (!grounded && Input.GetAxis(id + "Horizontal") > 0 && move)
         {
             myRb.velocity = new Vector2(moveSpeed * airMultiplier, myRb.velocity.y);
         }
-        else if (!grounded && Input.GetAxis(id + "Horizontal") < 0)
+        else if (!grounded && Input.GetAxis(id + "Horizontal") < 0 && move)
         {
             myRb.velocity = new Vector2(-moveSpeed * airMultiplier, myRb.velocity.y);
         }
