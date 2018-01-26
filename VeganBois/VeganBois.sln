@@ -1,14 +1,18 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VeganBois", "Assembly-CSharp.csproj", "{FED002DA-18D3-0C55-E517-375E5ACE962A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-
+		{FED002DA-18D3-0C55-E517-375E5ACE962A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FED002DA-18D3-0C55-E517-375E5ACE962A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FED002DA-18D3-0C55-E517-375E5ACE962A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FED002DA-18D3-0C55-E517-375E5ACE962A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
