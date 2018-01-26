@@ -15,7 +15,9 @@ public class ShootController : MonoBehaviour
 
 	void Update () 
 	{
-		Vector2 direction;
+		float x = Input.GetAxis ("1Horizontal");
+		float y = Input.GetAxis ("1Vertical");
+		Vector3 direction = new Vector3(x, y, 0);
 
 		target.transform.position = transform.position + direction * targetDistance;
 	}
