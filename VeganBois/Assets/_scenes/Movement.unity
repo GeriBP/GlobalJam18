@@ -318,7 +318,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 1
-  moveSpeed: 1
+  moveSpeed: 4
+  jumpForce: 15
+  jumpTime: 0.2
+  fallMult: 2
+  lowJumpMult: 4
   groundP: {fileID: 407128616}
   mask:
     serializedVersion: 2
