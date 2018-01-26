@@ -5,8 +5,11 @@ using UnityEngine;
 public class ShootController : MonoBehaviour 
 {
 	public GameObject target;
+	public GameObject projectilePrefab;
 
-	public float targetDistance;
+	public float targetDistance, projectileSpeed;
+
+	Vector3 direction;
 
 	void Start () 
 	{
@@ -17,8 +20,20 @@ public class ShootController : MonoBehaviour
 	{
 		float x = Input.GetAxis ("1Horizontal");
 		float y = Input.GetAxis ("1Vertical");
-		Vector3 direction = new Vector3(x, y, 0);
+		direction = new Vector3(x, y, 0).normalized;
 
 		target.transform.position = transform.position + direction * targetDistance;
+
+		handleShoot ();
+	}
+
+	void handleShoot()
+	{
+		if (Input.GetKeyDown (KeyCode.Space)) 
+		{
+			Debug.Log ("SHOOT!");
+			GameObject g = Instantiate (projectilePrefab, transform.position, Quaternion.identity);
+			g.GetComponent<Rigidbody2D> ().velocity = direction * projectileSpeed;
+		}
 	}
 }
