@@ -8,11 +8,14 @@ public class PlayerMove : MonoBehaviour {
     [SerializeField]
     float moveSpeed;
     [SerializeField]
+    float jumpTime;
+    [SerializeField]
     GameObject groundP;
     [SerializeField]
     LayerMask mask;
 
     private Rigidbody2D myRb;
+    private bool canJump = true;
 
     private bool grounded = false;
     private Vector2 normal;
@@ -22,6 +25,10 @@ public class PlayerMove : MonoBehaviour {
 	
 	void Update () {
         grounded = checkGround();
+        if (Input.GetButton(id + "Jump"))
+        {
+
+        }
     }
 
     private void FixedUpdate()
@@ -39,7 +46,7 @@ public class PlayerMove : MonoBehaviour {
     private bool checkGround()
     {
         RaycastHit2D hit = Physics2D.Raycast(groundP.transform.position, Vector2.down, 1f, mask);
-        Debug.DrawRay(groundP.transform.position, Vector2.down, Color.red, 1f);
+        Debug.DrawRay(groundP.transform.position, Vector2.down, Color.red);
         bool hitBool = false;
         if (hit.collider != null)
         {
