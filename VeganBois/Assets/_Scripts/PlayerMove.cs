@@ -12,11 +12,13 @@ public class PlayerMove : MonoBehaviour {
     [SerializeField]
     LayerMask mask;
 
+    private Rigidbody2D myRb;
+
     private bool grounded = false;
     private Vector2 normal;
 	void Start () {
-		
-	}
+        myRb = GetComponent<Rigidbody2D>();
+    }
 	
 	void Update () {
         grounded = checkGround();
@@ -24,7 +26,14 @@ public class PlayerMove : MonoBehaviour {
 
     private void FixedUpdate()
     {
-        
+        if (grounded && Input.GetAxis(id + "Horizontal") > 0)
+        {
+            myRb.velocity = new Vector2(moveSpeed, myRb.velocity.y);
+        }
+        else if (grounded && Input.GetAxis(id + "Horizontal") < 0)
+        {
+            myRb.velocity = new Vector2(-moveSpeed, myRb.velocity.y);
+        }
     }
 
     private bool checkGround()
