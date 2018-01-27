@@ -196,6 +196,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   move: 1
+  faceLeft: 1
 --- !u!114 &114576381546992286
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -224,7 +225,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 228e894a99aef214ba6cdbcce1afbadc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprite: {fileID: 212549168593227724}
+  indicator: {fileID: 212549168593227724}
+  target: {fileID: 212248193871194988}
   colors:
   - {r: 0, g: 1, b: 0, a: 1}
   - {r: 1, g: 0, b: 0, a: 1}
