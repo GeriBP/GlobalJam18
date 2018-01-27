@@ -9,7 +9,8 @@ public class ShootController : MonoBehaviour
 
 	public float targetDistance, projectileSpeed;
 
-	Vector3 direction;
+	Vector3 direction = Vector3.left;
+	bool targetActive;
 
 	void Start () 
 	{
@@ -18,17 +19,22 @@ public class ShootController : MonoBehaviour
 
 	void Update ()
 	{
-		float x = Input.GetAxis ("1Horizontal");
-		float y = Input.GetAxis ("1Vertical");
-		direction = new Vector3(x, y, 0).normalized;
-
+		handleDirection ();
 		handleTarget ();
 		handleShoot ();
 	}
 
+	void handleDirection()
+	{
+		float x = Input.GetAxis ("1Horizontal");
+		float y = Input.GetAxis ("1Vertical");
+		if (x != 0 || y != 0)
+			direction = new Vector3(x, y, 0).normalized;
+	}
+
 	void handleShoot()
 	{
-		if (Input.GetButtonDown ("1X")) 
+		if (Input.GetButtonUp ("1X")) 
 		{
 			//Debug.Log ("SHOOT!");
 			GameObject g = Instantiate (projectilePrefab, transform.position, Quaternion.identity);
@@ -38,6 +44,17 @@ public class ShootController : MonoBehaviour
 
 	void handleTarget()
 	{
-		target.transform.position = transform.position + direction * targetDistance;
+		if (Input.GetButtonDown ("1X"))
+			targetActive = true;
+		if (Input.GetButtonUp ("1X"))
+			targetActive = false;
+		
+		target.SetActive (targetActive);
+
+		if (target.activeSelf) 
+		{
+			if (direction != Vector3.zero)
+				target.transform.position = transform.position + direction * targetDistance;
+		}
 	}
 }
