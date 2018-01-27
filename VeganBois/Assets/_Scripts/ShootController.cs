@@ -32,8 +32,19 @@ public class ShootController : MonoBehaviour
 	{
 		float x = Input.GetAxis (player.id + "Horizontal");
 		float y = Input.GetAxis (player.id + "Vertical");
-		if (x != 0 || y != 0)
-			direction = new Vector3(x, y, 0).normalized;
+		if (x != 0 || y != 0) 
+		{
+			direction = new Vector3 (x, y, 0).normalized;
+			if (direction.x == 0)
+				Debug.Log ("Go vegan");
+			else if (direction.x < 0) {
+				target.transform.localScale = new Vector3 (Mathf.Abs(target.transform.localScale.x), target.transform.localScale.y, target.transform.localScale.z);
+			}
+			else
+				target.transform.localScale = new Vector3 (Mathf.Abs(target.transform.localScale.x) * -1, target.transform.localScale.y, target.transform.localScale.z);
+			float angle = Vector3.SignedAngle (Vector3.right, direction, Vector3.forward);
+			target.transform.rotation = Quaternion.Euler (0, 0, angle);
+		}
 	}
 
 	void handleShoot()
@@ -60,9 +71,13 @@ public class ShootController : MonoBehaviour
 
 		if (target.activeSelf) 
 		{
+			player.move = false;
 			if (direction != Vector3.zero)
 				target.transform.position = transform.position + direction * targetDistance;
 		}
+
+		if (Input.GetButtonUp (player.id + "X"))
+			player.move = true;
 	}
 
 	public void Refill()
