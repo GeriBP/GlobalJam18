@@ -8,9 +8,10 @@ public class FourPlayerM : MonoBehaviour {
     private PlayerMove[] pM;
     private int vegans, carnivores;
     public Sprite vSprite, cSprite;
-    private int rounds = 0;
+    public static int rounds = 0;
     public static int[] points = {0,0,0,0};
     public Text[] texts;
+    public Text announce;
     public CameraShake shake;
     public float intensity, duration;
 
@@ -34,6 +35,13 @@ public class FourPlayerM : MonoBehaviour {
             texts[i].color = colorsArray[i];
         }
         UpdatetScores();
+        
+    }
+
+    IEnumerator StartRound()
+    {
+        
+        yield return null;
     }
 
     private void Update()
@@ -64,6 +72,7 @@ public class FourPlayerM : MonoBehaviour {
         for (int i = 0; i < player.Length; i++)
         {
             pM[int.Parse(player[i].id) - 1] = player[i];
+            pM[int.Parse(player[i].id) - 1].move = false;
         }
 
         AssignTeams();
