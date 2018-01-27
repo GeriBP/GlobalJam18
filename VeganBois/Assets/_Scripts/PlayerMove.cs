@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour {
     public string id;
+    public bool isVegan;
+    [HideInInspector]
+    public int points;
     [Header ("Player Movement")]
     [SerializeField]
     float moveSpeed;
