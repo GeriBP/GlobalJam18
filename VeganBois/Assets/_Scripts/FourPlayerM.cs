@@ -5,6 +5,9 @@ using UnityEngine;
 public class FourPlayerM : MonoBehaviour {
     private PlayerMove[] pM;
     private int vegans, carnivores;
+    public Sprite vSprite, cSprite;
+    private int rounds = 0;
+    private int[] points = {0,0,0,0};
 
     public static FourPlayerM InstanceFourPlayer;
 	void Start ()
@@ -28,27 +31,50 @@ public class FourPlayerM : MonoBehaviour {
             pM[int.Parse(player[i].id) - 1] = player[i];
         }
 
-        //shuffle
+        AssignTeams();
+
         for (int i = 0; i < pM.Length; i++)
         {
-            int rnd = Random.Range(0, pM.Length);
-            PlayerMove temp = pM[rnd];
-            pM[rnd] = pM[i];
-            pM[i] = temp;
-        }
-        for (int i = 0; i < pM.Length; i++)
-        {
-            if (i < 2)
-            {
-                pM[i].isVegan = true;
-                pM[i].gameObject.layer = LayerMask.NameToLayer("Vegan");
-            }
-            else
-            {
-                pM[i].isVegan = false;
-                pM[i].gameObject.layer = LayerMask.NameToLayer("Carnivore");
-            }
             Debug.Log(i + " : " + pM[i].id + " is he vegan? " + pM[i].isVegan);
+        }
+    }
+
+    private void AssignTeams()
+    {
+        for (int i = 0; i < pM.Length; i++)
+        {
+            GoVegan(i, true);
+        }
+
+        int c1 = Random.Range(0, 4);
+        int c2 = Random.Range(0, 4);
+        while (c1 == c2)
+        {
+            c2 = Random.Range(0, 4);
+        }
+        GoCarnivore(c1, true);
+        GoCarnivore(c2, true);
+    }
+
+    private void GoVegan(int i, bool begin)
+    {
+        pM[i].isVegan = true;
+        pM[i].gameObject.layer = LayerMask.NameToLayer("Vegan");
+        pM[i].gameObject.GetComponent<SpriteRenderer>().sprite = vSprite;
+        if (!begin)
+        {
+
+        }
+    }
+
+    private void GoCarnivore(int i, bool begin)
+    {
+        pM[i].isVegan = false;
+        pM[i].gameObject.layer = LayerMask.NameToLayer("Carnivore");
+        pM[i].gameObject.GetComponent<SpriteRenderer>().sprite = cSprite;
+        if (!begin)
+        {
+
         }
     }
 
