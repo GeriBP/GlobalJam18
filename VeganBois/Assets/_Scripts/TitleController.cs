@@ -5,6 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class TitleController : MonoBehaviour 
 {
+
+	void Start()
+	{
+		FourPlayerM.points = new int[] { 0, 0, 0, 0 };
+	}
+
 	public void Play1v1()
 	{
 		SceneManager.LoadScene ("Janster");

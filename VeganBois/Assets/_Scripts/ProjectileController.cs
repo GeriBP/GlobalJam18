@@ -41,8 +41,6 @@ public class ProjectileController : MonoBehaviour {
 			PlayerMove player = other.gameObject.GetComponent<PlayerMove> ();
 			if (manager != null)
 				manager.ManageHit (playerId, int.Parse (player.id), isVegan);
-			else
-				//Destroy (other.gameObject);
 			
 			Die ();
 		}
