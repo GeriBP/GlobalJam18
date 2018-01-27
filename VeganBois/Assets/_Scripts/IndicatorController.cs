@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class IndicatorController : MonoBehaviour
 {
-	public SpriteRenderer sprite;
+	public SpriteRenderer indicator;
+	public SpriteRenderer target;
 	public Color[] colors;
 
 	void Start ()
 	{
 		int id = int.Parse (GetComponent<PlayerMove> ().id);
-		sprite.color = colors [id - 1];
+		indicator.color = colors [id - 1];
+		target.color = colors [id - 1];
 	}
 }

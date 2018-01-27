@@ -35,14 +35,8 @@ public class ShootController : MonoBehaviour
 		if (x != 0 || y != 0) 
 		{
 			direction = new Vector3 (x, y, 0).normalized;
-            if (direction.x == 0) return;
-            else if (direction.x < 0)
-            {
-                target.transform.localScale = new Vector3(Mathf.Abs(target.transform.localScale.x), target.transform.localScale.y, target.transform.localScale.z);
-            }
-            else
-                target.transform.localScale = new Vector3(Mathf.Abs(target.transform.localScale.x) * -1, target.transform.localScale.y, target.transform.localScale.z);
-			float angle = Vector3.SignedAngle (Vector3.right, direction, Vector3.forward);
+
+			float angle = Vector3.SignedAngle (!player.faceLeft ? Vector3.right : Vector3.left, direction, Vector3.forward);
 			target.transform.rotation = Quaternion.Euler (0, 0, angle);
 		}
 	}
