@@ -204,7 +204,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9fffe854a2b86d4db5a13fb9713ed62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: Manager4T_Janster_2
+  sceneName: Manager4T_Janster
 --- !u!1001 &87828985
 Prefab:
   m_ObjectHideFlags: 0
@@ -274,11 +274,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4382754200494326, guid: aca3434c3fb00b248848f086e86c27f9, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -0.69
+      value: -0.09
       objectReference: {fileID: 0}
     - target: {fileID: 4382754200494326, guid: aca3434c3fb00b248848f086e86c27f9, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -3.66
+      value: -3.87
       objectReference: {fileID: 0}
     - target: {fileID: 4382754200494326, guid: aca3434c3fb00b248848f086e86c27f9, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1255,20 +1255,21 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4090266471341608, guid: 11c14112dde03484aaea440bbcffed7f, type: 2}
       propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4090266471341608, guid: 11c14112dde03484aaea440bbcffed7f, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 50573958135843798, guid: 11c14112dde03484aaea440bbcffed7f,
-        type: 2}
-      propertyPath: m_Constraints
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1001528898770930, guid: 11c14112dde03484aaea440bbcffed7f, type: 2}
       propertyPath: m_Name
       value: Player1
+      objectReference: {fileID: 0}
+    - target: {fileID: 70690202160616730, guid: 11c14112dde03484aaea440bbcffed7f,
+        type: 2}
+      propertyPath: m_Offset.y
+      value: -0.1340133
+      objectReference: {fileID: 0}
+    - target: {fileID: 70690202160616730, guid: 11c14112dde03484aaea440bbcffed7f,
+        type: 2}
+      propertyPath: m_Size.y
+      value: 1.3523866
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 11c14112dde03484aaea440bbcffed7f, type: 2}
@@ -1282,11 +1283,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4382754200494326, guid: aca3434c3fb00b248848f086e86c27f9, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 4.48
+      value: 4.11
       objectReference: {fileID: 0}
     - target: {fileID: 4382754200494326, guid: aca3434c3fb00b248848f086e86c27f9, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -3.73
+      value: -3.81
       objectReference: {fileID: 0}
     - target: {fileID: 4382754200494326, guid: aca3434c3fb00b248848f086e86c27f9, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1328,7 +1329,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4382754200494326, guid: aca3434c3fb00b248848f086e86c27f9, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 8.47
+      value: 7.8
       objectReference: {fileID: 0}
     - target: {fileID: 4382754200494326, guid: aca3434c3fb00b248848f086e86c27f9, type: 2}
       propertyPath: m_LocalPosition.y
@@ -1380,11 +1381,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4382754200494326, guid: aca3434c3fb00b248848f086e86c27f9, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -8.29
+      value: -7.78
       objectReference: {fileID: 0}
     - target: {fileID: 4382754200494326, guid: aca3434c3fb00b248848f086e86c27f9, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -1.72
+      value: -1.83
       objectReference: {fileID: 0}
     - target: {fileID: 4382754200494326, guid: aca3434c3fb00b248848f086e86c27f9, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1460,7 +1461,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4090266471341608, guid: 11c14112dde03484aaea440bbcffed7f, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1001528898770930, guid: 11c14112dde03484aaea440bbcffed7f, type: 2}
       propertyPath: m_Name

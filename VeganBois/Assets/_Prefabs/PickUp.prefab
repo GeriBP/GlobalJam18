@@ -37,8 +37,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4382754200494326}
   - component: {fileID: 212366292091425532}
-  - component: {fileID: 58916291377449476}
   - component: {fileID: 114862174347900220}
+  - component: {fileID: 61625438216549580}
   m_Layer: 0
   m_Name: PickUp
   m_TagString: Untagged
@@ -66,15 +66,15 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1226886482755420}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.09, y: -0.83, z: 0}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
+  m_LocalPosition: {x: -0.09, y: -3.66, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4370197427361470}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &58916291377449476
-CircleCollider2D:
+--- !u!61 &61625438216549580
+BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -85,9 +85,19 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.01999998, y: -0.025435418}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2, y: 1}
+    newSize: {x: 2.56, y: 2.56}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Radius: 1.28
+  m_Size: {x: 1.7, y: 0.65087086}
+  m_EdgeRadius: 0
 --- !u!114 &114862174347900220
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -160,7 +170,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 2044515519
+  randomSeed: 1054987312
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -250,7 +260,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0, g: 0.5803922, b: 0.027450982, a: 1}
+      maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -3505,8 +3515,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a1ed56758e28a7c4088fa968d8facb67, type: 3}
-  m_Color: {r: 0, g: 0.5955882, b: 0.028752586, a: 1}
+  m_Sprite: {fileID: 21300000, guid: fdaf4178412f3d4449e52f1f951c1258, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
