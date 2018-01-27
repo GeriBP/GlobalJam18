@@ -48,7 +48,6 @@ public class PlayerMove : MonoBehaviour {
         GroundChecking();
         if (canJump && currJumps > 0 && Input.GetButtonDown(id + "A") && move)
         {
-            Debug.Log(id + "A");
             canJump = false;
             Invoke("EnableJump", jumpTime);
             myRb.velocity = new Vector2(myRb.velocity.x, 0.0f);
@@ -110,11 +109,11 @@ public class PlayerMove : MonoBehaviour {
         {
             myRb.velocity = new Vector2(-moveSpeed, myRb.velocity.y);
         }
-        if (!grounded && Input.GetAxis(id + "Horizontal") > 0 && move)
+        if (!grounded && Input.GetAxis(id + "Horizontal") > 0)
         {
             myRb.velocity = new Vector2(moveSpeed * airMultiplier, myRb.velocity.y);
         }
-        else if (!grounded && Input.GetAxis(id + "Horizontal") < 0 && move)
+        else if (!grounded && Input.GetAxis(id + "Horizontal") < 0)
         {
             myRb.velocity = new Vector2(-moveSpeed * airMultiplier, myRb.velocity.y);
         }
@@ -122,7 +121,7 @@ public class PlayerMove : MonoBehaviour {
         {
             myRb.velocity = new Vector2(0.0f, myRb.velocity.y);
         }
-		if (!move)
+		if (!move && grounded)
 		{
 			myRb.inertia = 0;
 			myRb.velocity = new Vector2(0.0f, myRb.velocity.y);
