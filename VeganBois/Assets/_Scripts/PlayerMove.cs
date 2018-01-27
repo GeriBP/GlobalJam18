@@ -71,11 +71,11 @@ public class PlayerMove : MonoBehaviour {
             //We apply more force downwards to fall faster
             myRb.velocity -= Vector2.down * Physics2D.gravity.y * lowJumpMult * Time.deltaTime;
         }
-        if (myRb.velocity.x < 0 && !faceLeft)
+        if (myRb.velocity.x < 0 && !faceLeft && myRb.velocity.magnitude > 2.0f)
         {
             Flip();
         }
-        else if (myRb.velocity.x > 0 && faceLeft)
+        else if (myRb.velocity.x > 0 && faceLeft && myRb.velocity.magnitude > 2.0f)
         {
             Flip();
         }
