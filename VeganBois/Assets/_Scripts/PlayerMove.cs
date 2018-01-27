@@ -50,6 +50,7 @@ public class PlayerMove : MonoBehaviour {
         GroundChecking();
         if (canJump && currJumps > 0 && Input.GetButtonDown(id + "A") && move)
         {
+            Debug.Log(id + "A");
             canJump = false;
             Invoke("EnableJump", jumpTime);
             myRb.velocity = new Vector2(myRb.velocity.x, 0.0f);
