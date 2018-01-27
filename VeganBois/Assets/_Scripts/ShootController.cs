@@ -14,12 +14,14 @@ public class ShootController : MonoBehaviour
 	Vector3 direction = Vector3.left;
 	bool targetActive;
 	int bullets = 1;
+	PlayerMove player;
 
 	void Update ()
 	{
 		handleDirection ();
 		handleTarget ();
 		handleShoot ();
+		player = GetComponent<PlayerMove> ();
 	}
 
 	void handleDirection()
@@ -32,11 +34,12 @@ public class ShootController : MonoBehaviour
 
 	void handleShoot()
 	{
-		if (Input.GetButtonUp ("1X") && bullets > 0) 
+		if (Input.GetButtonUp ("1X") && bullets > 0)
 		{
 			//Debug.Log ("SHOOT!");
 			GameObject g = Instantiate (projectilePrefab, transform.position, Quaternion.identity);
 			g.GetComponent<ProjectileController> ().playerLayer = gameObject.layer;
+			g.GetComponent<ProjectileController> ().isVegan = player.isVegan;
 			g.GetComponent<Rigidbody2D> ().velocity = direction * projectileSpeed;
 			--bullets;
 		}

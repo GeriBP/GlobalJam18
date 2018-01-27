@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 58459588259493730}
   - component: {fileID: 58348666319260620}
   - component: {fileID: 114598644182201202}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Projectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59,7 +59,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 720a8bc0ca29a014791ec724123126da, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -78,7 +78,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 1.8
+  m_Radius: 1.5
 --- !u!58 &58459588259493730
 CircleCollider2D:
   m_ObjectHideFlags: 1
