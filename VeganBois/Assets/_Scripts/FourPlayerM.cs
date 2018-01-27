@@ -8,9 +8,12 @@ public class FourPlayerM : MonoBehaviour {
     private PlayerMove[] pM;
     private int vegans, carnivores;
     public Sprite vSprite, cSprite;
-    private int rounds = 0;
+    public static int rounds = 0;
     public static int[] points = {0,0,0,0};
     public Text[] texts;
+    public Text announce;
+    public CameraShake shake;
+    public float intensity, duration;
 
     public static FourPlayerM InstanceFourPlayer;
 
@@ -32,6 +35,13 @@ public class FourPlayerM : MonoBehaviour {
             texts[i].color = colorsArray[i];
         }
         UpdatetScores();
+        
+    }
+
+    IEnumerator StartRound()
+    {
+        
+        yield return null;
     }
 
     private void Update()
@@ -43,17 +53,14 @@ public class FourPlayerM : MonoBehaviour {
         }
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            Debug.Log("manage hit " + 2);
             ManageHit(1, 2, killCarnivore);
         }
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
-            Debug.Log("manage hit " + 3);
             ManageHit(1, 3, killCarnivore);
         }
         if (Input.GetKeyDown(KeyCode.Alpha4))
         {
-            Debug.Log("manage hit " + 4);
             ManageHit(1, 4, killCarnivore);
         }
     }
@@ -65,6 +72,7 @@ public class FourPlayerM : MonoBehaviour {
         for (int i = 0; i < player.Length; i++)
         {
             pM[int.Parse(player[i].id) - 1] = player[i];
+            pM[int.Parse(player[i].id) - 1].move = false;
         }
 
         AssignTeams();
@@ -103,6 +111,7 @@ public class FourPlayerM : MonoBehaviour {
 
     public void ManageHit(int p1, int p2, bool vegan)
     {
+        shake.Shake(intensity, duration);
         if (vegan)
         {
             //points
@@ -131,11 +140,16 @@ public class FourPlayerM : MonoBehaviour {
     {
         if (carnivores >= 4 || vegans >= 4)
         {
-            SceneManager.LoadScene("Manager4T");
+            Invoke("Reloadlevel", 0.0f);
             //END thiiis
             //Animation
             //Invoke scene load
         }
+    }
+
+    void Reloadlevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     void UpdatetScores()

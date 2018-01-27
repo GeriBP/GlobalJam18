@@ -52,7 +52,7 @@ public class PlayerMove : MonoBehaviour {
 	void Update ()
     {
         GroundChecking();
-        if (canJump && currJumps > 0 && Input.GetButtonDown(id + "A") && move)
+        if (canJump && currJumps > 0 && Input.GetButtonDown(id + "A"))
         {
             canJump = false;
             Invoke("EnableJump", jumpTime);
