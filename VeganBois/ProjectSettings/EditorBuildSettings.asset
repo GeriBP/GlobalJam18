@@ -9,5 +9,5 @@ EditorBuildSettings:
     path: Assets/_scenes/Title.unity
     guid: 52ceb534d2ee0204182714f163af3ec7
   - enabled: 1
-    path: Assets/_scenes/Janster.unity
-    guid: 6bbbe13da864faa4696efe54dc0ba4cc
+    path: Assets/_scenes/Manager4T_Janster.unity
+    guid: 2415d73eff1640e4a834621deae59426

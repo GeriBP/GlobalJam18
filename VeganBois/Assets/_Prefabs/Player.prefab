@@ -86,7 +86,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1001528898770930}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.496, y: -0.921, z: 0}
+  m_LocalPosition: {x: -6.34, y: -0.54, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4234603299865526}
@@ -166,8 +166,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.03249097, y: -0.2192837}
-  m_Size: {x: 0.81383944, y: 1.5229274}
+  m_Offset: {x: -0.03249097, y: -0.14906013}
+  m_Size: {x: 0.81383944, y: 1.3824803}
   m_Direction: 0
 --- !u!114 &114337123311157706
 MonoBehaviour:
@@ -214,6 +214,7 @@ MonoBehaviour:
   targetDistance: 2
   projectileSpeed: 20
   maxBullets: 3
+  bullets: 1
 --- !u!114 &114880130726879506
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -263,8 +264,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 635393457
+  m_SortingLayer: 1
   m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: 4903bd31eba7c9740a6c3beac7e8c4f8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -307,8 +308,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1604432779
+  m_SortingLayer: 2
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300002, guid: b90472ba82a97194b83a46ff9d25f2df, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.7529412}
@@ -351,8 +352,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1604432779
+  m_SortingLayer: 2
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: b90472ba82a97194b83a46ff9d25f2df, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
