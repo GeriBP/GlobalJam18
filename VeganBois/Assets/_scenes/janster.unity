@@ -286,9 +286,29 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 114880130726879506, guid: 11c14112dde03484aaea440bbcffed7f,
+        type: 2}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 434175501}
+    - target: {fileID: 114880130726879506, guid: 11c14112dde03484aaea440bbcffed7f,
+        type: 2}
+      propertyPath: indicator
+      value: 
+      objectReference: {fileID: 434175502}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 11c14112dde03484aaea440bbcffed7f, type: 2}
   m_IsPrefabParent: 0
+--- !u!212 &434175501 stripped
+SpriteRenderer:
+  m_PrefabParentObject: {fileID: 212248193871194988, guid: 11c14112dde03484aaea440bbcffed7f,
+    type: 2}
+  m_PrefabInternal: {fileID: 434175500}
+--- !u!212 &434175502 stripped
+SpriteRenderer:
+  m_PrefabParentObject: {fileID: 212549168593227724, guid: 11c14112dde03484aaea440bbcffed7f,
+    type: 2}
+  m_PrefabInternal: {fileID: 434175500}
 --- !u!1 &695779596
 GameObject:
   m_ObjectHideFlags: 0
@@ -860,6 +880,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   move: 1
+  faceLeft: 1
 --- !u!50 &1989302743
 Rigidbody2D:
   serializedVersion: 4

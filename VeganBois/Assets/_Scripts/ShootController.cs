@@ -35,14 +35,8 @@ public class ShootController : MonoBehaviour
 		if (x != 0 || y != 0) 
 		{
 			direction = new Vector3 (x, y, 0).normalized;
-            if (direction.x == 0) return;
-            else if (direction.x < 0)
-            {
-                target.transform.localScale = new Vector3(Mathf.Abs(target.transform.localScale.x), target.transform.localScale.y, target.transform.localScale.z);
-            }
-            else
-                target.transform.localScale = new Vector3(Mathf.Abs(target.transform.localScale.x) * -1, target.transform.localScale.y, target.transform.localScale.z);
-			float angle = Vector3.SignedAngle (Vector3.right, direction, Vector3.forward);
+
+			float angle = Vector3.SignedAngle (!player.faceLeft ? Vector3.right : Vector3.left, direction, Vector3.forward);
 			target.transform.rotation = Quaternion.Euler (0, 0, angle);
 		}
 	}
@@ -53,10 +47,10 @@ public class ShootController : MonoBehaviour
 		{
 			//Debug.Log ("SHOOT!");
 			GameObject g = Instantiate (projectilePrefab, transform.position, Quaternion.identity);
-			g.GetComponent<ProjectileController> ().playerLayer = gameObject.layer;
 			g.GetComponent<ProjectileController> ().isVegan = player.isVegan;
 			g.GetComponent<ProjectileController> ().playerId = int.Parse (player.id);
 			g.GetComponent<Rigidbody2D> ().velocity = direction * projectileSpeed;
+			g.layer = player.isVegan ? LayerMask.NameToLayer ("Veggie") : LayerMask.NameToLayer ("Meat");
 			--bullets;
 		}
 	}

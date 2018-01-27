@@ -34,7 +34,7 @@ public class PlayerMove : MonoBehaviour {
     private Rigidbody2D myRb;
     private bool canJump = true;
     private int currJumps;
-    private bool faceLeft = true;
+    public bool faceLeft = true;
 
     private bool grounded = false;
     private Vector2 normal;

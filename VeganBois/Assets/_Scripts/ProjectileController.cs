@@ -6,7 +6,6 @@ public class ProjectileController : MonoBehaviour {
 
 	Rigidbody2D rb;
 	Collider2D col;
-	public int playerLayer;
 	public bool isVegan;
 	public int playerId;
 

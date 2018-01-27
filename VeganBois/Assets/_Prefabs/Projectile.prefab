@@ -58,7 +58,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 50
-  m_GravityScale: 1
+  m_GravityScale: 1.3
   m_Material: {fileID: 6200000, guid: 720a8bc0ca29a014791ec724123126da, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -105,8 +105,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23de083ac1375ef4ba3f0e137cfbdc5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerLayer: 0
   isVegan: 0
+  playerId: 0
 --- !u!212 &212342971856812768
 SpriteRenderer:
   m_ObjectHideFlags: 1
