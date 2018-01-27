@@ -4,18 +4,16 @@ using UnityEngine;
 
 public class ShootController : MonoBehaviour 
 {
+	[Header("Configuration")]
 	public GameObject target;
 	public GameObject projectilePrefab;
 
 	public float targetDistance, projectileSpeed;
+	public int maxBullets = 3;
 
 	Vector3 direction = Vector3.left;
 	bool targetActive;
-
-	void Start () 
-	{
-		
-	}
+	int bullets = 1;
 
 	void Update ()
 	{
@@ -34,12 +32,13 @@ public class ShootController : MonoBehaviour
 
 	void handleShoot()
 	{
-		if (Input.GetButtonUp ("1X")) 
+		if (Input.GetButtonUp ("1X") && bullets > 0) 
 		{
 			//Debug.Log ("SHOOT!");
 			GameObject g = Instantiate (projectilePrefab, transform.position, Quaternion.identity);
 			g.GetComponent<ProjectileController> ().playerLayer = gameObject.layer;
 			g.GetComponent<Rigidbody2D> ().velocity = direction * projectileSpeed;
+			--bullets;
 		}
 	}
 
@@ -57,5 +56,11 @@ public class ShootController : MonoBehaviour
 			if (direction != Vector3.zero)
 				target.transform.position = transform.position + direction * targetDistance;
 		}
+	}
+
+	public void Refill()
+	{
+		if (bullets < maxBullets)
+			bullets++;
 	}
 }
