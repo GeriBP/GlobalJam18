@@ -106,6 +106,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerLayer: 0
+  isVegan: 0
 --- !u!212 &212342971856812768
 SpriteRenderer:
   m_ObjectHideFlags: 1
