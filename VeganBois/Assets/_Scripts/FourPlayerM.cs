@@ -41,10 +41,12 @@ public class FourPlayerM : MonoBehaviour {
             if (i < 2)
             {
                 pM[i].isVegan = true;
+                pM[i].gameObject.layer = LayerMask.NameToLayer("Vegan");
             }
             else
             {
                 pM[i].isVegan = false;
+                pM[i].gameObject.layer = LayerMask.NameToLayer("Carnivore");
             }
             Debug.Log(i + " : " + pM[i].id + " is he vegan? " + pM[i].isVegan);
         }

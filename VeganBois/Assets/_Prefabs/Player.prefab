@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 114337123311157706}
   m_Layer: 8
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -52,8 +52,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1001528898770930}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.496, y: -0.921, z: 0}
-  m_LocalScale: {x: 6.143673, y: 4.300755, z: 1.6565686}
+  m_LocalPosition: {x: -6.34, y: -0.54, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4234603299865526}
   m_Father: {fileID: 0}
@@ -66,7 +66,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1908630502342678}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.208, z: 0}
+  m_LocalPosition: {x: -0.05, y: -0.96, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4090266471341608}
@@ -104,8 +104,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.15, y: 0.4}
+  m_Offset: {x: -0.03249097, y: -0.2192837}
+  m_Size: {x: 0.81383944, y: 1.5229274}
   m_Direction: 0
 --- !u!114 &114337123311157706
 MonoBehaviour:
@@ -119,6 +119,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 1
+  isVegan: 0
+  points: 0
   moveSpeed: 4
   jumpForce: 15
   secondMultiplier: 0.5
@@ -166,7 +168,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 54d68323400cf524e9af5fa9e10ec76a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4903bd31eba7c9740a6c3beac7e8c4f8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

@@ -34,6 +34,7 @@ public class PlayerMove : MonoBehaviour {
     private Rigidbody2D myRb;
     private bool canJump = true;
     private int currJumps;
+    private bool faceLeft = true;
 
     private bool grounded = false;
     private Vector2 normal;
@@ -45,7 +46,7 @@ public class PlayerMove : MonoBehaviour {
 	void Update ()
     {
         GroundChecking();
-        if (canJump && currJumps > 0 && Input.GetButtonDown("Fire1") && move)
+        if (canJump && currJumps > 0 && Input.GetButtonDown(id + "A") && move)
         {
             canJump = false;
             Invoke("EnableJump", jumpTime);
@@ -65,10 +66,18 @@ public class PlayerMove : MonoBehaviour {
             //We apply more force downwards to fall faster
             myRb.velocity -= Vector2.down * Physics2D.gravity.y * fallMult * Time.deltaTime;
         }
-        else if (myRb.velocity.y > 0 && !Input.GetButton("Fire1")) //If we are going up and not pressing the jump button
+        else if (myRb.velocity.y > 0 && !Input.GetButton(id + "A")) //If we are going up and not pressing the jump button
         {
             //We apply more force downwards to fall faster
             myRb.velocity -= Vector2.down * Physics2D.gravity.y * lowJumpMult * Time.deltaTime;
+        }
+        if (myRb.velocity.x < 0 && !faceLeft)
+        {
+            Flip();
+        }
+        else if (myRb.velocity.x > 0 && faceLeft)
+        {
+            Flip();
         }
     }
 
@@ -130,5 +139,11 @@ public class PlayerMove : MonoBehaviour {
             normal = new Vector2(0, 1);
             return hitBool;
         }
+    }
+
+    void Flip()
+    {
+        faceLeft = !faceLeft;
+        transform.localScale = new Vector3(transform.localScale.x * -1.0f, transform.localScale.y, transform.localScale.z);
     }
 }
