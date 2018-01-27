@@ -13,7 +13,7 @@ public class ShootController : MonoBehaviour
 
 	Vector3 direction = Vector3.left;
 	bool targetActive;
-	int bullets = 1;
+	public int bullets = 1;
 	PlayerMove player;
 
     private void Start()
