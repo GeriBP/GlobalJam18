@@ -8,7 +8,7 @@ public class FourPlayerM : MonoBehaviour {
     private int vegans, carnivores;
     public Sprite vSprite, cSprite;
     private int rounds = 0;
-    private int[] points = {0,0,0,0};
+    public static int[] points = {0,0,0,0};
     public Text[] texts;
 
     public static FourPlayerM InstanceFourPlayer;
@@ -16,7 +16,7 @@ public class FourPlayerM : MonoBehaviour {
     private bool killCarnivore = true;
     void Start ()
     {
-        if (InstanceFourPlayer != null) Destroy(gameObject);
+        if (InstanceFourPlayer != null) Destroy(InstanceFourPlayer.gameObject);
         InstanceFourPlayer = this;
 
         DontDestroyOnLoad(gameObject);
@@ -67,11 +67,6 @@ public class FourPlayerM : MonoBehaviour {
         }
 
         AssignTeams();
-
-        for (int i = 0; i < pM.Length; i++)
-        {
-            Debug.Log(i + " : " + pM[i].id + " is he vegan? " + pM[i].isVegan);
-        }
     }
 
     private void AssignTeams()
