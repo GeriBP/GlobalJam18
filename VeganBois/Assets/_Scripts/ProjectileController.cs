@@ -5,7 +5,6 @@ using UnityEngine;
 public class ProjectileController : MonoBehaviour {
 
 	Rigidbody2D rb;
-	Collider2D col;
 	public bool isVegan;
 	public int playerId;
 
@@ -13,12 +12,9 @@ public class ProjectileController : MonoBehaviour {
 	public Sprite[] veggieSprites;
 	public Sprite[] meatSprites;
 
-
 	void Start ()
 	{
 		rb = GetComponent<Rigidbody2D> ();
-
-		col = GetComponent<Collider2D> ();
 
 		sprite = GetComponent<SpriteRenderer> ();
 		if (isVegan)
