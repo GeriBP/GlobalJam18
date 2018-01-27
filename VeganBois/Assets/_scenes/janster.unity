@@ -854,6 +854,7 @@ MonoBehaviour:
   points: 0
   moveSpeed: 10
   jumpForce: 20
+  jumpYSpeed: 0
   secondMultiplier: 0.5
   airMultiplier: 0.75
   nJumps: 2
