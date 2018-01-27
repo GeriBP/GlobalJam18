@@ -9,7 +9,7 @@ public class ResetScene : MonoBehaviour {
 
 	void Update () 
 	{
-		if (Input.GetKeyDown (KeyCode.R))
+		if (Input.GetKeyDown (KeyCode.R) || Input.GetButtonDown ("1Back"))
 			SceneManager.LoadScene (sceneName);
 	}
 }
