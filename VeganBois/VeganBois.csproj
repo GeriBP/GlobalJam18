@@ -287,8 +287,12 @@
   <ItemGroup>
     <Compile Include="Assets\_Scripts\__player.cs" />
     <Compile Include="Assets\_Scripts\FourPlayerM.cs" />
+    <Compile Include="Assets\_Scripts\PickupController.cs" />
     <Compile Include="Assets\_Scripts\PlayerMove.cs" />
+    <Compile Include="Assets\_Scripts\ProjectileController.cs" />
+    <Compile Include="Assets\_Scripts\ResetScene.cs" />
     <Compile Include="Assets\_Scripts\ShootController.cs" />
+    <Compile Include="Assets\_Scripts\TitleController.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
