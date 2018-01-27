@@ -16,25 +16,29 @@ public class ShootController : MonoBehaviour
 	int bullets = 1;
 	PlayerMove player;
 
-	void Update ()
+    private void Start()
+    {
+        player = GetComponent<PlayerMove>();
+    }
+
+    void Update ()
 	{
-		handleDirection ();
+        handleDirection ();
 		handleTarget ();
 		handleShoot ();
-		player = GetComponent<PlayerMove> ();
 	}
 
 	void handleDirection()
 	{
-		float x = Input.GetAxis ("1Horizontal");
-		float y = Input.GetAxis ("1Vertical");
+		float x = Input.GetAxis (player.id + "Horizontal");
+		float y = Input.GetAxis (player.id + "Vertical");
 		if (x != 0 || y != 0)
 			direction = new Vector3(x, y, 0).normalized;
 	}
 
 	void handleShoot()
 	{
-		if (Input.GetButtonUp ("1X") && bullets > 0)
+		if (Input.GetButtonUp (player.id+"X") && bullets > 0)
 		{
 			//Debug.Log ("SHOOT!");
 			GameObject g = Instantiate (projectilePrefab, transform.position, Quaternion.identity);
@@ -47,9 +51,9 @@ public class ShootController : MonoBehaviour
 
 	void handleTarget()
 	{
-		if (Input.GetButtonDown ("1X"))
+		if (Input.GetButtonDown (player.id + "X"))
 			targetActive = true;
-		if (Input.GetButtonUp ("1X"))
+		if (Input.GetButtonUp (player.id + "X"))
 			targetActive = false;
 		
 		target.SetActive (targetActive);
