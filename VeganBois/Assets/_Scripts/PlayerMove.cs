@@ -28,6 +28,12 @@ public class PlayerMove : MonoBehaviour {
     GameObject groundP;
     [SerializeField]
     LayerMask mask;
+    [SerializeField]
+    GameObject landing;
+    [SerializeField]
+    GameObject takeOff;
+    [SerializeField]
+    GameObject takeOff2;
 
     public bool move = true;
 
@@ -58,6 +64,8 @@ public class PlayerMove : MonoBehaviour {
             }
             myRb.AddForce(Vector2.up * applyForce, ForceMode2D.Impulse);
             --currJumps;
+            if(grounded) Instantiate(takeOff, groundP.transform.position, Quaternion.identity);
+            else Instantiate(takeOff2, groundP.transform.position, Quaternion.identity);
         }
 
         //Jump "Game-feel" improvement
@@ -85,11 +93,8 @@ public class PlayerMove : MonoBehaviour {
     {
         if (!grounded && checkGround()) //if we land
         {
+            Instantiate(landing, groundP.transform.position, Quaternion.identity);
             currJumps = nJumps;
-        }
-        if (grounded && !checkGround() && canJump) //if we takeOff
-        {
-            currJumps--;
         }
         grounded = checkGround();
     }

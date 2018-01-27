@@ -183,7 +183,7 @@ MonoBehaviour:
   id: 1
   isVegan: 1
   moveSpeed: 10
-  jumpForce: 20
+  jumpForce: 22
   jumpYSpeed: 5
   secondMultiplier: 0.5
   airMultiplier: 0.75
@@ -195,6 +195,9 @@ MonoBehaviour:
   mask:
     serializedVersion: 2
     m_Bits: 1
+  landing: {fileID: 1691944874504784, guid: a0b18e8d4390fb14e93413a7a35f519a, type: 2}
+  takeOff: {fileID: 1691944874504784, guid: 89f69302b38490f4490ae599ab2f1b3f, type: 2}
+  takeOff2: {fileID: 1691944874504784, guid: 0f304094fba35f04ebc3d312c4539feb, type: 2}
   move: 1
   faceLeft: 1
 --- !u!114 &114576381546992286
