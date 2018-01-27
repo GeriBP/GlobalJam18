@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class FourPlayerM : MonoBehaviour {
     private PlayerMove[] pM;
@@ -8,9 +9,12 @@ public class FourPlayerM : MonoBehaviour {
     public Sprite vSprite, cSprite;
     private int rounds = 0;
     private int[] points = {0,0,0,0};
+    public Text[] texts;
 
     public static FourPlayerM InstanceFourPlayer;
-	void Start ()
+
+    private bool killCarnivore = true;
+    void Start ()
     {
         if (InstanceFourPlayer != null) Destroy(gameObject);
         InstanceFourPlayer = this;
@@ -20,6 +24,37 @@ public class FourPlayerM : MonoBehaviour {
         vegans = 2;
         carnivores = 2;
         PrepareArray();
+
+        Color[] colorsArray = pM[0].gameObject.GetComponent<IndicatorController>().colors;
+        for (int i = 0; i < texts.Length; i++)
+        {
+            texts[i].color = colorsArray[i];
+        }
+        UpdatetScores();
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Alpha0))
+        {
+            killCarnivore = !killCarnivore;
+            Debug.Log("Kill carnivores? " + killCarnivore);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            Debug.Log("manage hit " + 2);
+            ManageHit(1, 2, killCarnivore);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            Debug.Log("manage hit " + 3);
+            ManageHit(1, 3, killCarnivore);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            Debug.Log("manage hit " + 4);
+            ManageHit(1, 4, killCarnivore);
+        }
     }
 
     private void PrepareArray()
@@ -75,7 +110,7 @@ public class FourPlayerM : MonoBehaviour {
         if (vegan)
         {
             //points
-            points[p1 - 1] = carnivores * 10;
+            points[p1 - 1] += carnivores * 10;
             //Animation
             //pM[p2 - 1].Transformation();
             GoVegan(p2 - 1);
@@ -85,13 +120,14 @@ public class FourPlayerM : MonoBehaviour {
         else
         {
             //points
-            points[p1 - 1] = vegans * 10;
+            points[p1 - 1] += vegans * 10;
             //Animation
             //pM[p2 - 1].Transformation();
             GoCarnivore(p2 - 1);
             --vegans;
             ++carnivores;
         }
+        UpdatetScores();
         CheckEndRound();
     }
 
@@ -99,9 +135,18 @@ public class FourPlayerM : MonoBehaviour {
     {
         if (carnivores >= 4 || vegans >= 4)
         {
+            Debug.Log("EEENDDNDDNDNDN");
             //END thiiis
             //Animation
             //Invoke scene load
+        }
+    }
+
+    void UpdatetScores()
+    {
+        for (int i = 0; i < texts.Length; i++)
+        {
+            texts[i].text = points[i].ToString();
         }
     }
 }
