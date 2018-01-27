@@ -43,7 +43,7 @@ public class FourPlayerM : MonoBehaviour {
     {
         for (int i = 0; i < pM.Length; i++)
         {
-            GoVegan(i, true);
+            GoVegan(i);
         }
 
         int c1 = Random.Range(0, 4);
@@ -52,39 +52,56 @@ public class FourPlayerM : MonoBehaviour {
         {
             c2 = Random.Range(0, 4);
         }
-        GoCarnivore(c1, true);
-        GoCarnivore(c2, true);
+        GoCarnivore(c1);
+        GoCarnivore(c2);
     }
 
-    private void GoVegan(int i, bool begin)
+    private void GoVegan(int i)
     {
         pM[i].isVegan = true;
         pM[i].gameObject.layer = LayerMask.NameToLayer("Vegan");
         pM[i].gameObject.GetComponent<SpriteRenderer>().sprite = vSprite;
-        if (!begin)
-        {
-
-        }
     }
 
-    private void GoCarnivore(int i, bool begin)
+    private void GoCarnivore(int i)
     {
         pM[i].isVegan = false;
         pM[i].gameObject.layer = LayerMask.NameToLayer("Carnivore");
         pM[i].gameObject.GetComponent<SpriteRenderer>().sprite = cSprite;
-        if (!begin)
-        {
-
-        }
     }
 
     public void ManageHit(int p1, int p2, bool vegan)
     {
-        //TODO
         if (vegan)
         {
+            //points
+            points[p1 - 1] = carnivores * 10;
+            //Animation
+            //pM[p2 - 1].Transformation();
+            GoVegan(p2 - 1);
             ++vegans;
             --carnivores;
+        }
+        else
+        {
+            //points
+            points[p1 - 1] = vegans * 10;
+            //Animation
+            //pM[p2 - 1].Transformation();
+            GoCarnivore(p2 - 1);
+            --vegans;
+            ++carnivores;
+        }
+        CheckEndRound();
+    }
+
+    void CheckEndRound()
+    {
+        if (carnivores >= 4 || vegans >= 4)
+        {
+            //END thiiis
+            //Animation
+            //Invoke scene load
         }
     }
 }
