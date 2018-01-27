@@ -59,6 +59,11 @@ public class PlayerMove : MonoBehaviour {
             }
             myRb.AddForce(Vector2.up * applyForce, ForceMode2D.Impulse);
             --currJumps;
+
+            if (move)
+            {
+                myRb.velocity = new Vector2(0.0f, myRb.velocity.y);
+            }
         }
 
         //Jump "Game-feel" improvement
