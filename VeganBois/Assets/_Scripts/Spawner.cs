@@ -10,7 +10,7 @@ public class Spawner : MonoBehaviour
 
 	void Start ()
 	{
-		InvokeRepeating ("Spawn", 3, spawnTime);
+		InvokeRepeating ("Spawn", 0, spawnTime);
 	}
 
 	void Spawn()

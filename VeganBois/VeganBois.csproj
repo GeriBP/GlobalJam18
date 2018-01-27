@@ -296,6 +296,7 @@
     <Compile Include="Assets\_Scripts\ProjectileController.cs" />
     <Compile Include="Assets\_Scripts\ResetScene.cs" />
     <Compile Include="Assets\_Scripts\ShootController.cs" />
+    <Compile Include="Assets\_Scripts\Spawner.cs" />
     <Compile Include="Assets\_Scripts\TitleController.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

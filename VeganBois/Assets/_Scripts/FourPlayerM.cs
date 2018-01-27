@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class FourPlayerM : MonoBehaviour {
     private PlayerMove[] pM;
@@ -130,7 +131,7 @@ public class FourPlayerM : MonoBehaviour {
     {
         if (carnivores >= 4 || vegans >= 4)
         {
-            Debug.Log("EEENDDNDDNDNDN");
+            SceneManager.LoadScene("Manager4T");
             //END thiiis
             //Animation
             //Invoke scene load
