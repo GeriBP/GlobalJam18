@@ -50,6 +50,7 @@ public class ShootController : MonoBehaviour
 			g.GetComponent<ProjectileController> ().isVegan = player.isVegan;
 			g.GetComponent<ProjectileController> ().playerId = int.Parse (player.id);
 			g.GetComponent<Rigidbody2D> ().velocity = direction * projectileSpeed;
+			g.layer = player.isVegan ? LayerMask.NameToLayer ("Veggie") : LayerMask.NameToLayer ("Meat");
 			--bullets;
 		}
 	}
