@@ -9,14 +9,26 @@ public class ProjectileController : MonoBehaviour {
 	public bool isVegan;
 	public int playerId;
 
+	SpriteRenderer sprite;
+	public Sprite[] veggieSprites;
+	public Sprite[] meatSprites;
+
+
 	void Start ()
 	{
 		rb = GetComponent<Rigidbody2D> ();
 
 		col = GetComponent<Collider2D> ();
-		//col.enabled = false;
+
+		sprite = GetComponent<SpriteRenderer> ();
+		if (isVegan)
+			sprite.sprite = veggieSprites[Random.Range (0, veggieSprites.Length)];
+		else
+			sprite.sprite = meatSprites[Random.Range (0, meatSprites.Length)];
 
 		InvokeRepeating ("checkSpeed", 1, 1);
+
+		transform.rotation = Quaternion.Euler (0, 0, Random.Range (0.0f, 360.0f));
 	}
 	
 	void checkSpeed()

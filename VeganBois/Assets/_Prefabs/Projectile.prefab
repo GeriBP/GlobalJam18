@@ -38,8 +38,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1931214053130332}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.47, y: 1.68, z: 0}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
+  m_LocalPosition: {x: -6.98, y: 1.4380976, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -62,7 +62,7 @@ Rigidbody2D:
   m_Material: {fileID: 6200000, guid: 720a8bc0ca29a014791ec724123126da, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!58 &58348666319260620
 CircleCollider2D:
@@ -78,7 +78,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 1.5
+  m_Radius: 0.5
 --- !u!58 &58459588259493730
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -93,7 +93,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 1.28
+  m_Radius: 0.3
 --- !u!114 &114598644182201202
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -107,6 +107,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isVegan: 0
   playerId: 0
+  veggieSprites:
+  - {fileID: 21300000, guid: fc5c9b5f8594e974b9f4924e35f0b40d, type: 3}
+  - {fileID: 21300000, guid: 8ba1a346ef868844a86c105bd77f1f5a, type: 3}
+  - {fileID: 21300000, guid: fe27690f654a4b14b80981f87f881dcb, type: 3}
+  meatSprites:
+  - {fileID: 21300000, guid: 4358bb7bd1d3e894aa1aa49c4b746837, type: 3}
+  - {fileID: 21300000, guid: deebf4af1dca7ef45a1ae4aa5d66ab0c, type: 3}
+  - {fileID: 21300000, guid: a3afadee25147a5438108a7a923d233b, type: 3}
 --- !u!212 &212342971856812768
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -141,8 +149,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a1ed56758e28a7c4088fa968d8facb67, type: 3}
-  m_Color: {r: 0, g: 0.5955882, b: 0.028752586, a: 1}
+  m_Sprite: {fileID: 21300000, guid: fc5c9b5f8594e974b9f4924e35f0b40d, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
