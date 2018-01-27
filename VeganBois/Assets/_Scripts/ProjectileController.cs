@@ -8,6 +8,7 @@ public class ProjectileController : MonoBehaviour {
 	Collider2D col;
 	public int playerLayer;
 	public bool isVegan;
+	public int playerId;
 
 	void Start ()
 	{
@@ -41,9 +42,10 @@ public class ProjectileController : MonoBehaviour {
 				// Two player manager
 			PlayerMove player = other.gameObject.GetComponent<PlayerMove> ();
 			if (manager)
-				manager.ManageHit (0, int.Parse (player.id), player.isVegan);
+				manager.ManageHit (playerId, int.Parse (player.id), isVegan);
 			else
 				Destroy (other.gameObject);
+			
 			Die ();
 		}
 	}

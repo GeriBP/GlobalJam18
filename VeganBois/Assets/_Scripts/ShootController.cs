@@ -55,6 +55,7 @@ public class ShootController : MonoBehaviour
 			GameObject g = Instantiate (projectilePrefab, transform.position, Quaternion.identity);
 			g.GetComponent<ProjectileController> ().playerLayer = gameObject.layer;
 			g.GetComponent<ProjectileController> ().isVegan = player.isVegan;
+			g.GetComponent<ProjectileController> ().playerId = int.Parse (player.id);
 			g.GetComponent<Rigidbody2D> ().velocity = direction * projectileSpeed;
 			--bullets;
 		}
