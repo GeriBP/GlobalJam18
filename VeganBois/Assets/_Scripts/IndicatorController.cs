@@ -9,7 +9,7 @@ public class IndicatorController : MonoBehaviour
 
 	void Start ()
 	{
-		string id = int.Parse (GetComponent<PlayerMove> ().id);
-		sprite.color = colors [id];
+		int id = int.Parse (GetComponent<PlayerMove> ().id);
+		sprite.color = colors [id - 1];
 	}
 }
