@@ -35,15 +35,14 @@ public class ProjectileController : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D other) {
 		if (other.CompareTag ("Player") && other.gameObject.GetComponent<PlayerMove> ().isVegan != isVegan)
 		{
-			other.gameObject.SetActive (false);
 			FourPlayerM manager = FindObjectOfType<FourPlayerM> ();
 			//if (!manager)
 				// Two player manager
 			PlayerMove player = other.gameObject.GetComponent<PlayerMove> ();
-			if (manager)
+			if (manager != null)
 				manager.ManageHit (playerId, int.Parse (player.id), isVegan);
 			else
-				Destroy (other.gameObject);
+				//Destroy (other.gameObject);
 			
 			Die ();
 		}

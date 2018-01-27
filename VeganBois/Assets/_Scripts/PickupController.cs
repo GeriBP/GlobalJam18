@@ -17,7 +17,7 @@ public class PickupController : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D other) {
-		if (other.CompareTag ("Player") && other.GetComponent<PlayerMove> ().isVegan == isVegan)
+		if (other.CompareTag ("Player") && other.GetComponent<ShootController> ().bullets < other.GetComponent<ShootController> ().maxBullets)
 		{
 			other.GetComponent<ShootController> ().Refill ();
 			Destroy (gameObject);
