@@ -205,7 +205,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9fffe854a2b86d4db5a13fb9713ed62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: Manager4T
+  sceneName: Manager4T_Janster
 --- !u!114 &7702708
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9856,16 +9856,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4090266471341608, guid: 11c14112dde03484aaea440bbcffed7f, type: 2}
       propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4090266471341608, guid: 11c14112dde03484aaea440bbcffed7f, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 50573958135843798, guid: 11c14112dde03484aaea440bbcffed7f,
-        type: 2}
-      propertyPath: m_Constraints
-      value: 4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1001528898770930, guid: 11c14112dde03484aaea440bbcffed7f, type: 2}
       propertyPath: m_Name
@@ -9923,7 +9914,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4090266471341608, guid: 11c14112dde03484aaea440bbcffed7f, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1001528898770930, guid: 11c14112dde03484aaea440bbcffed7f, type: 2}
       propertyPath: m_Name
@@ -9996,6 +9987,10 @@ MonoBehaviour:
   - {fileID: 981214926}
   - {fileID: 2070452703}
   - {fileID: 1497661169}
+  announce: {fileID: 0}
+  shake: {fileID: 0}
+  intensity: 0
+  duration: 0
 --- !u!4 &1511202548
 Transform:
   m_ObjectHideFlags: 0

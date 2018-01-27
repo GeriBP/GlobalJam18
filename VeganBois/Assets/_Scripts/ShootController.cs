@@ -9,17 +9,27 @@ public class ShootController : MonoBehaviour
 	public GameObject projectilePrefab;
 
 	public float targetDistance, projectileSpeed;
-	public int maxBullets = 3;
+	public int maxAmmo = 3;
+
+	public SpriteRenderer[] bullets;
 
 	Vector3 direction = Vector3.left;
 	bool targetActive;
-	public int bullets = 1;
+	public int ammo = 1;
 	PlayerMove player;
 
     private void Start()
     {
         player = GetComponent<PlayerMove>();
+		initBullets ();
     }
+
+	void initBullets()
+	{
+		for (int i = 0; i < bullets.Length; i++) {
+			bullets [i].enabled = i < ammo;
+		}
+	}
 
     void Update ()
 	{
@@ -43,7 +53,7 @@ public class ShootController : MonoBehaviour
 
 	void handleShoot()
 	{
-		if (Input.GetButtonUp (player.id+"X") && bullets > 0)
+		if (Input.GetButtonUp (player.id+"X") && ammo > 0)
 		{
 			//Debug.Log ("SHOOT!");
 			GameObject g = Instantiate (projectilePrefab, transform.position, Quaternion.identity);
@@ -51,7 +61,8 @@ public class ShootController : MonoBehaviour
 			g.GetComponent<ProjectileController> ().playerId = int.Parse (player.id);
 			g.GetComponent<Rigidbody2D> ().velocity = direction * projectileSpeed;
 			g.layer = player.isVegan ? LayerMask.NameToLayer ("Veggie") : LayerMask.NameToLayer ("Meat");
-			--bullets;
+			--ammo;
+			bullets [ammo].enabled = false;
 		}
 	}
 
@@ -77,7 +88,10 @@ public class ShootController : MonoBehaviour
 
 	public void Refill()
 	{
-		if (bullets < maxBullets)
-			bullets++;
+		if (ammo < maxAmmo)
+		{
+			bullets [ammo].enabled = true;
+			ammo++;
+		}
 	}
 }
