@@ -8,7 +8,7 @@ public class TitleController : MonoBehaviour
 	void Start()
 	{
 		FourPlayerM.points = new int[] { 0, 0, 0, 0 };
-        FourPlayerM.rounds = 0;
+        FourPlayerM.rounds = 1;
     }
 
 	public void LoadScene(string scene)
