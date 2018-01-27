@@ -13,6 +13,8 @@ public class PlayerMove : MonoBehaviour {
     [SerializeField]
     float jumpForce;
     [SerializeField]
+    float jumpYSpeed;
+    [SerializeField]
     float secondMultiplier;
     [SerializeField]
     float airMultiplier;
@@ -48,6 +50,7 @@ public class PlayerMove : MonoBehaviour {
         GroundChecking();
         if (canJump && currJumps > 0 && Input.GetButtonDown(id + "A") && move)
         {
+            Debug.Log(id + "A");
             canJump = false;
             Invoke("EnableJump", jumpTime);
             myRb.velocity = new Vector2(myRb.velocity.x, 0.0f);
@@ -61,7 +64,7 @@ public class PlayerMove : MonoBehaviour {
         }
 
         //Jump "Game-feel" improvement
-        if (myRb.velocity.y < 0) //If we are falling
+        if (myRb.velocity.y < jumpYSpeed) //If we are falling
         {
             //We apply more force downwards to fall faster
             myRb.velocity -= Vector2.down * Physics2D.gravity.y * fallMult * Time.deltaTime;
