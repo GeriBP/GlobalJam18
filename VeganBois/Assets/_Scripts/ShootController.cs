@@ -38,6 +38,7 @@ public class ShootController : MonoBehaviour
 		{
 			//Debug.Log ("SHOOT!");
 			GameObject g = Instantiate (projectilePrefab, transform.position, Quaternion.identity);
+			g.GetComponent<ProjectileController> ().playerLayer = gameObject.layer;
 			g.GetComponent<Rigidbody2D> ().velocity = direction * projectileSpeed;
 		}
 	}

@@ -54,6 +54,7 @@
      <Compile Include="Assets\_Scripts\__player.cs" />
      <Compile Include="Assets\_Scripts\FourPlayerM.cs" />
      <Compile Include="Assets\_Scripts\PlayerMove.cs" />
+     <Compile Include="Assets\_Scripts\ProjectileController.cs" />
      <Compile Include="Assets\_Scripts\ShootController.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>

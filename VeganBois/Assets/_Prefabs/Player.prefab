@@ -121,7 +121,7 @@ Rigidbody2D:
   m_Material: {fileID: 6200000, guid: d5d35ad76dcb2ba42b945ba30e9f5fd2, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!70 &70690202160616730
 CapsuleCollider2D:
@@ -179,8 +179,8 @@ MonoBehaviour:
   target: {fileID: 1166354867806342}
   projectilePrefab: {fileID: 1931214053130332, guid: 08b928448e1e0cd4a8af79bfa704d0fb,
     type: 2}
-  targetDistance: 4
-  projectileSpeed: 15
+  targetDistance: 2
+  projectileSpeed: 20
 --- !u!212 &212107733584674194
 SpriteRenderer:
   m_ObjectHideFlags: 1
