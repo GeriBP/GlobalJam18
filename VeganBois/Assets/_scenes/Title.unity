@@ -154,7 +154,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sounds:
   - name: menu_music
-    clip: {fileID: 8300000, guid: e9fceb1da898a5042ad9880900e36ffd, type: 3}
+    clip: {fileID: 8300000, guid: 101b969a0c5f6194aba7bcaa949918af, type: 3}
     volume: 1
     volumeVariance: 0
     pitch: 1
@@ -163,7 +163,7 @@ MonoBehaviour:
     dontRepeat: 1
     source: {fileID: 0}
   - name: game
-    clip: {fileID: 8300000, guid: 2efb153c2c8cd904a94b26b8a3f41657, type: 3}
+    clip: {fileID: 8300000, guid: cb97478f3d00f924db06ef991c2fa888, type: 3}
     volume: 0.5
     volumeVariance: 0
     pitch: 1
