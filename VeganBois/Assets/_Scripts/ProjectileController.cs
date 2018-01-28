@@ -12,6 +12,8 @@ public class ProjectileController : MonoBehaviour {
 	public Sprite[] veggieSprites;
 	public Sprite[] meatSprites;
 
+	public GameObject bonesPS, veggiesPS;
+
 	void Start ()
 	{
 		rb = GetComponent<Rigidbody2D> ();
@@ -49,9 +51,15 @@ public class ProjectileController : MonoBehaviour {
 			PlayerMove player = other.gameObject.GetComponent<PlayerMove> ();
 
 			if (player.isVegan)
+			{
 				AudioManager.instance.Play ("hit_vegan");
+				GameObject g = Instantiate (bonesPS, other.transform.position, Quaternion.identity);
+				Destroy (g, 2);
+			} 
 			else
+			{
 				AudioManager.instance.Play ("hit_carnist");
+			}
 			
 			if (manager != null)
 				manager.ManageHit (playerId, int.Parse (player.id), isVegan);
