@@ -15,6 +15,7 @@ public class Spawner : MonoBehaviour
 		count = 0;
 		InvokeRepeating ("Spawn", 0, spawnTime);
 		AudioManager.instance.Play ("game");
+		Cursor.visible = false;
 	}
 
 	void Spawn()
