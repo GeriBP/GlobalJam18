@@ -296,6 +296,7 @@
     <Compile Include="Assets\_Scripts\PlayerMove.cs" />
     <Compile Include="Assets\_Scripts\ProjectileController.cs" />
     <Compile Include="Assets\_Scripts\ResetScene.cs" />
+    <Compile Include="Assets\_Scripts\Scroll.cs" />
     <Compile Include="Assets\_Scripts\ShootController.cs" />
     <Compile Include="Assets\_Scripts\Sound.cs" />
     <Compile Include="Assets\_Scripts\Spawner.cs" />
