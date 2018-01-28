@@ -1,12 +1,13 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\_Scripts\Spawner.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\_Scripts\ProjectileController.cs">
     <Files>
-      <File FileName="Assets\_Scripts\ShootController.cs" Line="101" Column="11" />
-      <File FileName="Assets\_Scripts\PlayerMove.cs" Line="69" Column="42" />
-      <File FileName="Assets\_Scripts\FourPlayerM.cs" Line="199" Column="40" />
-      <File FileName="Assets\_Scripts\Spawner.cs" Line="17" Column="36" />
-      <File FileName="Assets\_Scripts\TitleController.cs" Line="18" Column="45" />
+      <File FileName="Assets\_Scripts\ShootController.cs" Line="1" Column="1" />
+      <File FileName="Assets\_Scripts\PlayerMove.cs" Line="73" Column="39" />
+      <File FileName="Assets\_Scripts\FourPlayerM.cs" Line="1" Column="1" />
+      <File FileName="Assets\_Scripts\Spawner.cs" Line="18" Column="3" />
+      <File FileName="Assets\_Scripts\TitleController.cs" Line="26" Column="20" />
+      <File FileName="Assets\_Scripts\ProjectileController.cs" Line="57" Column="20" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

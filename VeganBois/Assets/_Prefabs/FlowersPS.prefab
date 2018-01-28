@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 198903545063308798}
   - component: {fileID: 199668588461476836}
   m_Layer: 0
-  m_Name: BonesPS
+  m_Name: FlowersPS
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -101,7 +101,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1814029310
+  randomSeed: -1671769296
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -3394,8 +3394,8 @@ ParticleSystemRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 2100000, guid: f2ef67e3494b03244aff8e5d84409d5b, type: 2}
-  - {fileID: 2100000, guid: f2ef67e3494b03244aff8e5d84409d5b, type: 2}
+  - {fileID: 2100000, guid: d07b5db98404a9746bf48dd113868e27, type: 2}
+  - {fileID: 2100000, guid: d07b5db98404a9746bf48dd113868e27, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
