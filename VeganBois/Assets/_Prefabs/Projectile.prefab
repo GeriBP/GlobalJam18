@@ -150,6 +150,10 @@ MonoBehaviour:
   veganC: {r: 0.1882353, g: 0.30980393, b: 0, a: 1}
   carnC: {r: 1, g: 0, b: 0, a: 1}
   glow: {fileID: 212180282807144282}
+  minMagnitude: 10
+  time2Check: 0.2
+  tScale: 0.15
+  smoothS: 0.1
 --- !u!212 &212180282807144282
 SpriteRenderer:
   m_ObjectHideFlags: 1

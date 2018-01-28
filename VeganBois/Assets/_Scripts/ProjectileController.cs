@@ -17,6 +17,7 @@ public class ProjectileController : MonoBehaviour {
     public Color veganC, carnC;
     public SpriteRenderer glow;
 
+    public float minMagnitude, time2Check, tScale, smoothS;
 	void Start ()
 	{
 		rb = GetComponent<Rigidbody2D> ();
@@ -40,16 +41,37 @@ public class ProjectileController : MonoBehaviour {
 	
 	void checkSpeed()
 	{
-		if (rb.velocity.sqrMagnitude == 0)
+		if (rb.velocity.sqrMagnitude <= minMagnitude)
 		{
-			Die ();
+            Invoke("ReCheck", time2Check);
 		}
 	}
+
+    void ReCheck()
+    {
+        if (rb.velocity.sqrMagnitude <= minMagnitude)
+        {
+            StartCoroutine(KillMe());
+        }
+    }
 
 	void Die()
 	{
 		Destroy (gameObject);
 	}
+
+    IEnumerator KillMe()
+    {
+        while (transform.localScale.x > tScale)
+        {
+            float x = Mathf.Lerp(transform.localScale.x, 0.0f, smoothS);
+            float y = Mathf.Lerp(transform.localScale.y, 0.0f, smoothS); ;
+            transform.localScale = new Vector3(x, y, 1.0f);
+            yield return null;
+        }
+        Destroy(gameObject);
+        yield return null;
+    }
 
 	void OnTriggerEnter2D(Collider2D other) {
 		if (other.CompareTag ("Player") && other.gameObject.GetComponent<PlayerMove> ().isVegan != isVegan)
