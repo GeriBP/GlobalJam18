@@ -34,6 +34,8 @@ public class PlayerMove : MonoBehaviour {
     GameObject takeOff;
     [SerializeField]
     GameObject takeOff2;
+	[SerializeField]
+	GameObject ammo;
 
     public bool move = true;
 
@@ -44,6 +46,7 @@ public class PlayerMove : MonoBehaviour {
 
     private bool grounded = false;
     private Vector2 normal;
+
 	void Start () {
         myRb = GetComponent<Rigidbody2D>();
         currJumps = nJumps;
@@ -155,5 +158,6 @@ public class PlayerMove : MonoBehaviour {
     {
         faceLeft = !faceLeft;
         transform.localScale = new Vector3(transform.localScale.x * -1.0f, transform.localScale.y, transform.localScale.z);
+		ammo.transform.localScale = new Vector3(ammo.transform.localScale.x * -1.0f, ammo.transform.localScale.y, ammo.transform.localScale.z);
     }
 }
