@@ -26,6 +26,7 @@ GameObject:
   - component: {fileID: 114576381546992286}
   - component: {fileID: 114880130726879506}
   - component: {fileID: 95569743740141044}
+  - component: {fileID: 210751649292868840}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -648,6 +649,16 @@ MonoBehaviour:
   - {r: 1, g: 0, b: 0, a: 1}
   - {r: 1, g: 1, b: 0, a: 1}
   - {r: 0, g: 0, b: 1, a: 1}
+--- !u!210 &210751649292868840
+SortingGroup:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1001528898770930}
+  m_Enabled: 1
+  m_SortingLayerID: 635393457
+  m_SortingLayer: 1
+  m_SortingOrder: 0
 --- !u!212 &212049776708328772
 SpriteRenderer:
   m_ObjectHideFlags: 1
