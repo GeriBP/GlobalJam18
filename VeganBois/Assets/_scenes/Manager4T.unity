@@ -9841,6 +9841,14 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1660458343402610, guid: fc846f6b0859ae045980d806642271ed, type: 2}
+      propertyPath: m_Name
+      value: State Text2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1488658556855022, guid: fc846f6b0859ae045980d806642271ed, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fc846f6b0859ae045980d806642271ed, type: 2}
   m_IsPrefabParent: 0
@@ -10026,7 +10034,7 @@ MonoBehaviour:
   shake: {fileID: 7702709}
   intensity: 0.5
   duration: 0.1
-  maxRounds: 2
+  maxRounds: 5
   win: {fileID: 210154206}
 --- !u!4 &1511202548
 Transform:
