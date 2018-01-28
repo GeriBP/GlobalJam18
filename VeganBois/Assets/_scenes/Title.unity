@@ -153,7 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sounds:
-  - name: Menu
+  - name: menu_music
     clip: {fileID: 8300000, guid: e9fceb1da898a5042ad9880900e36ffd, type: 3}
     volume: 1
     volumeVariance: 0
@@ -162,16 +162,16 @@ MonoBehaviour:
     loop: 1
     dontRepeat: 1
     source: {fileID: 0}
-  - name: Game
-    clip: {fileID: 8300000, guid: c067ab853d941e647a3f6269ea53b5b8, type: 3}
-    volume: 1
+  - name: game
+    clip: {fileID: 8300000, guid: 2efb153c2c8cd904a94b26b8a3f41657, type: 3}
+    volume: 0.5
     volumeVariance: 0
     pitch: 1
     pitchVariance: 0
     loop: 1
     dontRepeat: 1
     source: {fileID: 0}
-  - name: Game2
+  - name: game2
     clip: {fileID: 8300000, guid: 93f3e1a25eadeb24e915379af89010d7, type: 3}
     volume: 1
     volumeVariance: 0
@@ -179,6 +179,114 @@ MonoBehaviour:
     pitchVariance: 0
     loop: 1
     dontRepeat: 1
+    source: {fileID: 0}
+  - name: hover_button
+    clip: {fileID: 8300000, guid: f2b5c977c0b4831489dd9ab2061a6d07, type: 3}
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    dontRepeat: 0
+    source: {fileID: 0}
+  - name: click_button
+    clip: {fileID: 8300000, guid: abb749a5a9bb2864686265e1377e94a7, type: 3}
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    dontRepeat: 0
+    source: {fileID: 0}
+  - name: jump1
+    clip: {fileID: 8300000, guid: b7034f6ff84c1d34b9bf596a59b3785e, type: 3}
+    volume: 0.5
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    dontRepeat: 0
+    source: {fileID: 0}
+  - name: jump2
+    clip: {fileID: 8300000, guid: e65c84c47bfb7a746bea7728e4473249, type: 3}
+    volume: 0.5
+    volumeVariance: 0
+    pitch: 1.2
+    pitchVariance: 0
+    loop: 0
+    dontRepeat: 0
+    source: {fileID: 0}
+  - name: pickup
+    clip: {fileID: 8300000, guid: 2bf5303a28722a341aa5caf5b7c62cb8, type: 3}
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    dontRepeat: 0
+    source: {fileID: 0}
+  - name: throw1
+    clip: {fileID: 8300000, guid: fc3147689a6619241ad584c1033039d8, type: 3}
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    dontRepeat: 0
+    source: {fileID: 0}
+  - name: throw2
+    clip: {fileID: 8300000, guid: e933f2f62c70a434582666c9bc8736c3, type: 3}
+    volume: 1
+    volumeVariance: 0
+    pitch: 1.5
+    pitchVariance: 0
+    loop: 0
+    dontRepeat: 0
+    source: {fileID: 0}
+  - name: hit_vegan
+    clip: {fileID: 8300000, guid: 7433acdd7ee5827409cb0721cc1a5a67, type: 3}
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    dontRepeat: 0
+    source: {fileID: 0}
+  - name: hit_carnist
+    clip: {fileID: 8300000, guid: b6da1d4a05792ce448b39ce50aa26390, type: 3}
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    dontRepeat: 0
+    source: {fileID: 0}
+  - name: win_vegan
+    clip: {fileID: 8300000, guid: 57f23296e0ac67b4d8837f1cfbb16761, type: 3}
+    volume: 0.8
+    volumeVariance: 0
+    pitch: 1.3
+    pitchVariance: 0
+    loop: 0
+    dontRepeat: 0
+    source: {fileID: 0}
+  - name: win_carnist
+    clip: {fileID: 8300000, guid: 08e50baf594efd1488990b96ec4023c9, type: 3}
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    dontRepeat: 0
+    source: {fileID: 0}
+  - name: win_carnist2
+    clip: {fileID: 8300000, guid: e40e3073394263344ad44d6bb4a6b9fc, type: 3}
+    volume: 0.8
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    dontRepeat: 0
     source: {fileID: 0}
 --- !u!1 &200515215
 GameObject:

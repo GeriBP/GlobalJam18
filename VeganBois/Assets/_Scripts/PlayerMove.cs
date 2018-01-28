@@ -65,8 +65,12 @@ public class PlayerMove : MonoBehaviour {
             float applyForce = jumpForce;
             if (currJumps < nJumps)
             {
+				// Second jump
+				AudioManager.instance.Play ("jump2");
                 applyForce *= secondMultiplier;
             }
+			else
+				AudioManager.instance.Play ("jump1");
             myRb.AddForce(Vector2.up * applyForce, ForceMode2D.Impulse);
             --currJumps;
             if(grounded) Instantiate(takeOff, groundP.transform.position, Quaternion.identity);

@@ -182,10 +182,12 @@ public class FourPlayerM : MonoBehaviour {
         announce.enabled = true;
         if (vegans == 0)
         {
+			AudioManager.instance.Play ("win_carnist2");
             announce.text = "It's steak time!";
         }
         else
         {
+			AudioManager.instance.Play ("win_vegan");
             announce.text = "You got veganized!";
         }
         yield return new WaitForSeconds(0.5f);
@@ -193,6 +195,8 @@ public class FourPlayerM : MonoBehaviour {
         yield return new WaitForSeconds(0.5f);
         Reloadlevel();
         yield return new WaitForSeconds(2.0f);
+		AudioManager.instance.Stop ("game");
+		AudioManager.instance.Stop ("game2");
         SceneManager.LoadScene("Title");
         yield return null;
     }

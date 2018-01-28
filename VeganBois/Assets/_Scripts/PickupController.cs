@@ -10,6 +10,7 @@ public class PickupController : MonoBehaviour {
 	{
 		if (other.CompareTag ("Player") && other.GetComponent<ShootController> ().ammo < other.GetComponent<ShootController> ().maxAmmo)
 		{
+			AudioManager.instance.Play ("pickup");
 			Spawner.count--;
 			other.GetComponent<ShootController> ().Refill ();
 			Destroy (gameObject);

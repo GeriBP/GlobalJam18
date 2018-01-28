@@ -47,6 +47,12 @@ public class ProjectileController : MonoBehaviour {
 			//if (!manager)
 				// Two player manager
 			PlayerMove player = other.gameObject.GetComponent<PlayerMove> ();
+
+			if (player.isVegan)
+				AudioManager.instance.Play ("hit_vegan");
+			else
+				AudioManager.instance.Play ("hit_carnist");
+			
 			if (manager != null)
 				manager.ManageHit (playerId, int.Parse (player.id), isVegan);
 			

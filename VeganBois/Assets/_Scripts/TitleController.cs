@@ -10,12 +10,13 @@ public class TitleController : MonoBehaviour
 		FourPlayerM.points = new int[] { 0, 0, 0, 0 };
         FourPlayerM.rounds = 1;
 
-		AudioManager.instance.Play ("Menu");
+		AudioManager.instance.Play ("menu_music");
     }
 
 	public void LoadScene(string scene)
 	{
-		AudioManager.instance.Stop ("Menu");
+		AudioManager.instance.Stop ("menu_music");
+		AudioManager.instance.Play ("click_button");
 		//SceneManager.LoadScene (scene);
 		SceneManager.LoadSceneAsync (scene);
 	}
@@ -23,6 +24,7 @@ public class TitleController : MonoBehaviour
 	public void Exit()
 	{
 		Debug.Log ("Bye!");
+		AudioManager.instance.Play ("click_button");
 		Application.Quit ();
 	}
 }

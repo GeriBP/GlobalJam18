@@ -14,7 +14,7 @@ public class Spawner : MonoBehaviour
 	{
 		count = 0;
 		InvokeRepeating ("Spawn", 0, spawnTime);
-		AudioManager.instance.Play ("Game");
+		AudioManager.instance.Play ("game");
 	}
 
 	void Spawn()

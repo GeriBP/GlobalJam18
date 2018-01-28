@@ -58,6 +58,11 @@ public class ShootController : MonoBehaviour
 		if (Input.GetButtonUp (player.id+"X") && ammo > 0)
 		{
 			//Debug.Log ("SHOOT!");
+			if (player.isVegan)
+				AudioManager.instance.Play ("throw1");
+			else
+				AudioManager.instance.Play ("throw2");
+
 			GameObject g = Instantiate (projectilePrefab, transform.position, Quaternion.identity);
 			g.GetComponent<ProjectileController> ().isVegan = player.isVegan;
 			g.GetComponent<ProjectileController> ().playerId = int.Parse (player.id);
