@@ -13,6 +13,10 @@ public class TitleController : MonoBehaviour
 		AudioManager.instance.Play ("menu_music");
 
 		Cursor.visible = true;
+
+		GameObject g = GameObject.Find ("Manager");
+		if (g)
+			Destroy (g);
     }
 
 	public void LoadScene(string scene)
