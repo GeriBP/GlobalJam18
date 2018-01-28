@@ -26,8 +26,10 @@ public class ShootController : MonoBehaviour
 
 	void initBullets()
 	{
+		Color[] colors = GetComponent<IndicatorController> ().colors;
 		for (int i = 0; i < bullets.Length; i++) {
 			bullets [i].enabled = i < ammo;
+			bullets [i].color = colors [int.Parse (player.id) - 1];
 		}
 	}
 
