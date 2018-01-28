@@ -6,18 +6,24 @@ public class Spawner : MonoBehaviour
 {
 	public GameObject prefab;
 
-	public float minX, maxX, y, spawnTime;
+	public float minX, maxX, y, spawnTime, maxSpawned;
+
+	public static int count;
 
 	void Start ()
 	{
+		count = 0;
 		InvokeRepeating ("Spawn", 0, spawnTime);
 	}
 
 	void Spawn()
 	{
+		if (count > maxSpawned)
+			return;	// CLEAN CODE YEAH!
+		
 		float x = Random.Range (minX, maxX);
 		Vector3 pos = new Vector3 (x, y, 0);
-
-		GameObject g = Instantiate (prefab, pos, Quaternion.identity);
+		Instantiate (prefab, pos, Quaternion.identity);
+		count++;
 	}
 }
