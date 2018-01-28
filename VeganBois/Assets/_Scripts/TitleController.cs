@@ -15,8 +15,9 @@ public class TitleController : MonoBehaviour
 
 	public void LoadScene(string scene)
 	{
-		SceneManager.LoadScene (scene);
-		//SceneManager.LoadSceneAsync (scene);
+		AudioManager.instance.Stop ("Menu");
+		//SceneManager.LoadScene (scene);
+		SceneManager.LoadSceneAsync (scene);
 	}
 
 	public void Exit()
