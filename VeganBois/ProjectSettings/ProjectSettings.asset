@@ -13,7 +13,7 @@ PlayerSettings:
   accelerometerFrequency: 60
   companyName: DefaultCompany
   productName: VeganBois
-  defaultCursor: {fileID: 2800000, guid: 4358bb7bd1d3e894aa1aa49c4b746837, type: 3}
+  defaultCursor: {fileID: 2800000, guid: 74a2620370328a14284de2e87c55bd27, type: 3}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
   m_ShowUnitySplashScreen: 1
