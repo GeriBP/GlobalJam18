@@ -14,15 +14,24 @@ public class ProjectileController : MonoBehaviour {
 
 	public GameObject bonesPS, flowersPS;
 
+    public Color veganC, carnC;
+    public SpriteRenderer glow;
+
 	void Start ()
 	{
 		rb = GetComponent<Rigidbody2D> ();
 
 		sprite = GetComponent<SpriteRenderer> ();
 		if (isVegan)
-			sprite.sprite = veggieSprites[Random.Range (0, veggieSprites.Length)];
-		else
-			sprite.sprite = meatSprites[Random.Range (0, meatSprites.Length)];
+        {
+            sprite.sprite = veggieSprites[Random.Range(0, veggieSprites.Length)];
+            glow.color = veganC;
+        }
+        else
+        {
+            sprite.sprite = meatSprites[Random.Range(0, meatSprites.Length)];
+            glow.color = carnC;
+        }
 
 		InvokeRepeating ("checkSpeed", 1, 1);
 

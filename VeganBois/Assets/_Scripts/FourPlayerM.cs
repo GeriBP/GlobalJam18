@@ -117,26 +117,34 @@ public class FourPlayerM : MonoBehaviour {
     {
         pM[i].isVegan = true;
         pM[i].gameObject.layer = LayerMask.NameToLayer("Vegan");
-        pM[i].gameObject.GetComponent<SpriteRenderer>().sprite = vSprite;
+        //pM[i].gameObject.GetComponent<SpriteRenderer>().sprite = vSprite;
         Animator t = pM[i].gameObject.GetComponent<Animator>();
         AnimatorOverrideController animatorOverrideController = new AnimatorOverrideController(t.runtimeAnimatorController);
         t.runtimeAnimatorController = animatorOverrideController;
         animatorOverrideController["idle"] = idle;
         animatorOverrideController["walk"] = walk;
         animatorOverrideController["jump"] = jump;
+        foreach (Transform tr in pM[i].transform)
+        {
+            if (tr.name == "Outline") tr.GetComponent<SpriteRenderer>().sprite = vSprite;
+        }
     }
 
     private void GoCarnivore(int i)
     {
         pM[i].isVegan = false;
         pM[i].gameObject.layer = LayerMask.NameToLayer("Carnivore");
-        pM[i].gameObject.GetComponent<SpriteRenderer>().sprite = cSprite;
+        //pM[i].gameObject.GetComponent<SpriteRenderer>().sprite = cSprite;
         Animator t = pM[i].gameObject.GetComponent<Animator>();
         AnimatorOverrideController animatorOverrideController = new AnimatorOverrideController(t.runtimeAnimatorController);
         t.runtimeAnimatorController = animatorOverrideController;
         animatorOverrideController["idle"] = idleC;
         animatorOverrideController["walk"] = walkC;
         animatorOverrideController["jump"] = jumpC;
+        foreach (Transform tr in pM[i].transform)
+        {
+            if (tr.name == "Outline") tr.GetComponent<SpriteRenderer>().sprite = cSprite;
+        }
     }
 
     public void ManageHit(int p1, int p2, bool vegan)
