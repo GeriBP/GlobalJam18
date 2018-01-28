@@ -9,11 +9,15 @@ public class TitleController : MonoBehaviour
 	{
 		FourPlayerM.points = new int[] { 0, 0, 0, 0 };
         FourPlayerM.rounds = 1;
+
+		AudioManager.instance.Play ("Menu");
     }
 
 	public void LoadScene(string scene)
 	{
-		SceneManager.LoadScene (scene);
+		AudioManager.instance.Stop ("Menu");
+		//SceneManager.LoadScene (scene);
+		SceneManager.LoadSceneAsync (scene);
 	}
 
 	public void Exit()
