@@ -115,6 +115,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 4358bb7bd1d3e894aa1aa49c4b746837, type: 3}
   - {fileID: 21300000, guid: deebf4af1dca7ef45a1ae4aa5d66ab0c, type: 3}
   - {fileID: 21300000, guid: a3afadee25147a5438108a7a923d233b, type: 3}
+  bonesPS: {fileID: 1115085595984836, guid: 82cda20d7f531d740bd48e9d3c539fe4, type: 2}
+  flowersPS: {fileID: 1115085595984836, guid: 0f31104caab029344b09ac91fce1e98f, type: 2}
 --- !u!212 &212342971856812768
 SpriteRenderer:
   m_ObjectHideFlags: 1

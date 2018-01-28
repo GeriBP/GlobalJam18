@@ -12,7 +12,7 @@ public class ProjectileController : MonoBehaviour {
 	public Sprite[] veggieSprites;
 	public Sprite[] meatSprites;
 
-	public GameObject bonesPS, veggiesPS;
+	public GameObject bonesPS, flowersPS;
 
 	void Start ()
 	{
@@ -59,6 +59,8 @@ public class ProjectileController : MonoBehaviour {
 			else
 			{
 				AudioManager.instance.Play ("hit_carnist");
+				GameObject g = Instantiate (flowersPS, other.transform.position, Quaternion.identity);
+				Destroy (g, 2);
 			}
 			
 			if (manager != null)
