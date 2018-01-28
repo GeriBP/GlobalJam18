@@ -11,5 +11,8 @@ public class ResetScene : MonoBehaviour {
 	{
 		if (Input.GetKeyDown (KeyCode.R) || Input.GetButtonDown ("1Back"))
 			SceneManager.LoadScene (sceneName);
+		
+		if (Input.GetKeyDown (KeyCode.Escape))
+			SceneManager.LoadScene ("Title");
 	}
 }
