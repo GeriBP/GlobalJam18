@@ -43,6 +43,7 @@ public class PlayerMove : MonoBehaviour {
     private bool canJump = true;
     private int currJumps;
     public bool faceLeft = true;
+    private Animator mynim;
 
     private bool grounded = false;
     private Vector2 normal;
@@ -50,6 +51,7 @@ public class PlayerMove : MonoBehaviour {
 	void Start () {
         myRb = GetComponent<Rigidbody2D>();
         currJumps = nJumps;
+        mynim = GetComponent<Animator>();
     }
 	
 	void Update ()
@@ -90,6 +92,8 @@ public class PlayerMove : MonoBehaviour {
         {
             Flip();
         }
+        mynim.SetBool("grounded", grounded);
+        mynim.SetFloat("speed", Mathf.Abs(myRb.velocity.x));
     }
 
     private void GroundChecking()

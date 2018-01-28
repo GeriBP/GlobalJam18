@@ -16,6 +16,7 @@ public class FourPlayerM : MonoBehaviour {
     public float intensity, duration;
     public int maxRounds = 10;
     public GameObject win;
+    public AnimationClip walk, walkC, idle, idleC, jump, jumpC;
 
     public static FourPlayerM InstanceFourPlayer;
 
@@ -117,6 +118,12 @@ public class FourPlayerM : MonoBehaviour {
         pM[i].isVegan = true;
         pM[i].gameObject.layer = LayerMask.NameToLayer("Vegan");
         pM[i].gameObject.GetComponent<SpriteRenderer>().sprite = vSprite;
+        Animator t = pM[i].gameObject.GetComponent<Animator>();
+        AnimatorOverrideController animatorOverrideController = new AnimatorOverrideController(t.runtimeAnimatorController);
+        t.runtimeAnimatorController = animatorOverrideController;
+        animatorOverrideController["idle"] = idle;
+        animatorOverrideController["walk"] = walk;
+        animatorOverrideController["jump"] = jump;
     }
 
     private void GoCarnivore(int i)
@@ -124,6 +131,12 @@ public class FourPlayerM : MonoBehaviour {
         pM[i].isVegan = false;
         pM[i].gameObject.layer = LayerMask.NameToLayer("Carnivore");
         pM[i].gameObject.GetComponent<SpriteRenderer>().sprite = cSprite;
+        Animator t = pM[i].gameObject.GetComponent<Animator>();
+        AnimatorOverrideController animatorOverrideController = new AnimatorOverrideController(t.runtimeAnimatorController);
+        t.runtimeAnimatorController = animatorOverrideController;
+        animatorOverrideController["idle"] = idleC;
+        animatorOverrideController["walk"] = walkC;
+        animatorOverrideController["jump"] = jumpC;
     }
 
     public void ManageHit(int p1, int p2, bool vegan)

@@ -9891,15 +9891,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 4090266471341608, guid: 11c14112dde03484aaea440bbcffed7f, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 50573958135843798, guid: 11c14112dde03484aaea440bbcffed7f,
-        type: 2}
-      propertyPath: m_Constraints
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 1001528898770930, guid: 11c14112dde03484aaea440bbcffed7f, type: 2}
       propertyPath: m_Name
       value: Player1
@@ -10036,6 +10027,12 @@ MonoBehaviour:
   duration: 0.1
   maxRounds: 5
   win: {fileID: 210154206}
+  walk: {fileID: 7400000, guid: 99bea15c53c99fb41b260dbc58402be8, type: 2}
+  walkC: {fileID: 7400000, guid: 7feef04b8c5740948ae054123a3d1d26, type: 2}
+  idle: {fileID: 7400000, guid: 36e85b106ff15604b88abbfdc8bf0907, type: 2}
+  idleC: {fileID: 7400000, guid: 439eb19c02dc9514faf557149fb88e30, type: 2}
+  jump: {fileID: 7400000, guid: 0e87063481ff2994fbb5af1bd24fd585, type: 2}
+  jumpC: {fileID: 7400000, guid: 5c6dac25ca13e544c89193e00e3956d5, type: 2}
 --- !u!4 &1511202548
 Transform:
   m_ObjectHideFlags: 0
