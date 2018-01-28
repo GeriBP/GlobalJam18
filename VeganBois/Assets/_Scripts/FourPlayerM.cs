@@ -23,6 +23,11 @@ public class FourPlayerM : MonoBehaviour {
     private bool killCarnivore = true;
     void Start ()
     {
+        win = GameObject.Find("Win");
+        shake = Camera.main.GetComponent<CameraShake>();
+        announce = GameObject.Find("State Text").GetComponent<Text>();
+        announce2 = GameObject.Find("State Text2").GetComponent<Text>();
+        win.SetActive(false);
         if (InstanceFourPlayer != null) Destroy(InstanceFourPlayer.gameObject);
         InstanceFourPlayer = this;
 
