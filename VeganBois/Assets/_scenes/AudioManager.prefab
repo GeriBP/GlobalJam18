@@ -70,15 +70,6 @@ MonoBehaviour:
     loop: 1
     dontRepeat: 1
     source: {fileID: 0}
-  - name: game2
-    clip: {fileID: 8300000, guid: 93f3e1a25eadeb24e915379af89010d7, type: 3}
-    volume: 1
-    volumeVariance: 0
-    pitch: 1
-    pitchVariance: 0
-    loop: 1
-    dontRepeat: 1
-    source: {fileID: 0}
   - name: hover_button
     clip: {fileID: 8300000, guid: f2b5c977c0b4831489dd9ab2061a6d07, type: 3}
     volume: 1
