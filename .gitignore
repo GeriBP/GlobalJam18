@@ -35,3 +35,6 @@ VeganBois/.vs/
 VeganBois/VeganBois.sln
 VeganBois/Assets/_scenes/Movement.unity.meta
 VeganBois/Build.zip
+VeganBois/Assembly-CSharp.csproj
+*.csproj
+*.csproj
