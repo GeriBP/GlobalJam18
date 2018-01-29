@@ -11,6 +11,7 @@ public class TitleController : MonoBehaviour
         FourPlayerM.rounds = 1;
 
 		AudioManager.instance.Play ("menu_music");
+		AudioManager.instance.Stop ("game");
 
 		Cursor.visible = true;
 
