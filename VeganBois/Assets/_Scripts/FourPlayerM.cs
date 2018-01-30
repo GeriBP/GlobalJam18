@@ -203,8 +203,7 @@ public class FourPlayerM : MonoBehaviour {
         yield return new WaitForSeconds(0.5f);
         Reloadlevel();
         yield return new WaitForSeconds(2.0f);
-		AudioManager.instance.Stop ("game");
-		AudioManager.instance.Stop ("game2");
+		//AudioManager.instance.Stop ("game");
         SceneManager.LoadScene("Title");
         yield return null;
     }
